@@ -33,8 +33,10 @@ public class CustomTemplate {
      * FREE TO CREATE YOUR OWN WITH AS MANY DIFFERENT COLORS AS YOU WANT
      */
     public static final int[] SHINHAN_COLORS = {
-            Color.rgb(234, 87, 156),Color.rgb(240, 144, 197),
-            Color.rgb(248, 213, 233), Color.rgb(241, 244, 246)
+            Color.rgb(249, 41, 141),
+            Color.rgb(252, 111, 187),
+            Color.rgb(254, 199, 229),
+            Color.rgb(162, 167, 173)
     };
 
     /**

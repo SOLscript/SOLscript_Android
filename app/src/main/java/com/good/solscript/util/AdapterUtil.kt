@@ -5,6 +5,8 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 
 @BindingAdapter("setImage")
@@ -23,4 +25,25 @@ fun setProgressFrot(view: SeekBar, percent: Float) {
 @BindingAdapter("setPercent")
 fun setPercent(view: TextView, percent: Float) {
     view.text = percent.toString() + "%"
+}
+
+@BindingAdapter("price")
+fun setPayInfo(view: TextView, price: Int) {
+    view.text = price.toString() + "/"
+}
+
+@BindingAdapter("setPayDay")
+fun setPayDay(view: TextView, pay : String) {
+    view.text = pay
+    //데이터보고.. 그때 편집하자..
+}
+
+@BindingAdapter("setRcoudCornerImage")
+fun setRcoudCornerImage(view: ImageView, profile: String) {
+    Glide.with(view.context)
+        .load(profile)
+        .transform(RoundedCorners(18))
+        // Alternative: .transforms(CenterCrop(), RoundedCorners(radius))
+        .transition(DrawableTransitionOptions.withCrossFade())
+        .into(view)
 }
