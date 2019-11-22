@@ -5,7 +5,7 @@ import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface NetworkService{
+interface NetworkService {
 
     @GET("/posts")
     fun getSample(): Call<List<SampleData>>

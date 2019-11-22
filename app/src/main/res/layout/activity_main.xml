@@ -48,7 +48,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_calendar_gray" />
+                android:src="@drawable/ic_category_gray" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_category_gray" />
+                android:src="@drawable/ic_myscript_gray" />
 
             <ImageView
                 android:layout_width="wrap_content"

@@ -9,12 +9,13 @@ import com.good.solscript.databinding.RecyclerItemBinding
 
 class SampleAdapter : RecyclerView.Adapter<SampleAdapter.SampleViewHolder>() {
 
-    class SampleViewHolder(val binding : RecyclerItemBinding) : RecyclerView.ViewHolder(binding.root)
+    class SampleViewHolder(val binding: RecyclerItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     var data = listOf<SampleData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SampleViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_item,parent,false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.recycler_item, parent, false)
 
         val viewHolder = SampleViewHolder(RecyclerItemBinding.bind(view))
 

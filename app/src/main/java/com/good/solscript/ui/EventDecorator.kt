@@ -1,9 +1,9 @@
 package com.good.solscript.ui
 
-import com.prolificinteractive.materialcalendarview.spans.DotSpan
-import com.prolificinteractive.materialcalendarview.DayViewFacade
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
+import com.prolificinteractive.materialcalendarview.DayViewFacade
+import com.prolificinteractive.materialcalendarview.spans.DotSpan
 
 
 class EventDecorator(private val color: Int, dates: Collection<CalendarDay>) : DayViewDecorator {

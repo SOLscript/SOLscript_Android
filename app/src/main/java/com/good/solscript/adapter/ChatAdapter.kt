@@ -1,7 +1,6 @@
 package com.good.solscript.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.good.solscript.R
@@ -12,8 +11,11 @@ import com.good.solscript.databinding.RecyclerChatYourItemBinding
 
 class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    class ChatMyViewHolder(val binding: RecyclerChatMyItemBinding) : RecyclerView.ViewHolder(binding.root)
-    class ChatYourViewHolder(val binding: RecyclerChatYourItemBinding) : RecyclerView.ViewHolder(binding.root)
+    class ChatMyViewHolder(val binding: RecyclerChatMyItemBinding) :
+        RecyclerView.ViewHolder(binding.root)
+
+    class ChatYourViewHolder(val binding: RecyclerChatYourItemBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     var data = arrayListOf<ChatData>()
 
@@ -29,7 +31,7 @@ class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        lateinit var viewHolder : RecyclerView.ViewHolder
+        lateinit var viewHolder: RecyclerView.ViewHolder
 
         when (viewType) {
             0 -> {
@@ -60,11 +62,11 @@ class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val chatMessage = data[position]
 
         if (chatMessage.me) {
-            var holderMyViewHolder : ChatMyViewHolder = holder as ChatMyViewHolder
+            var holderMyViewHolder: ChatMyViewHolder = holder as ChatMyViewHolder
             holderMyViewHolder.binding.chatData = data[position]
 
         } else {
-            var holderYourViewHolder : ChatYourViewHolder = holder as ChatYourViewHolder
+            var holderYourViewHolder: ChatYourViewHolder = holder as ChatYourViewHolder
             holderYourViewHolder.binding.chatData = data[position]
         }
     }

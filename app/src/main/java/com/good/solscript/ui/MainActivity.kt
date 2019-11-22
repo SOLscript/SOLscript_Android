@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun setClickListener(){
+    fun setClickListener() {
         rl_mainact_homebtn.setOnClickListener {
             callFragment(1)
         }
@@ -44,11 +44,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             2 -> {
-                nowFrag = SubscriptFragment()
+                nowFrag = CategoryFragment()
             }
 
             3 -> {
-                nowFrag = CategoryFragment()
+                nowFrag = SubscriptFragment()
             }
         }
 

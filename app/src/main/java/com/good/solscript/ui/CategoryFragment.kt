@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.good.solscript.R
-import com.good.solscript.adapter.CategoryViewPagerAdapter
+import com.good.solscript.adapter.SliderMainPagerAdapter
 import kotlinx.android.synthetic.main.fragment_category.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.startActivity
 
 /**
  * A simple [Fragment] subclass.
@@ -30,13 +32,16 @@ class CategoryFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        configureMainTab()
+        //configureMainTab()
         Log.d("onActivityCreated", "categoryFragment")
 
-    }
+        vp_main_slider.adapter = SliderMainPagerAdapter(childFragmentManager, 3)
+        vp_main_slider.offscreenPageLimit = 2
+        tl_main_indicator.setupWithViewPager(vp_main_slider)
 
-    private fun configureMainTab() {
-        viewpager_category_item.adapter = CategoryViewPagerAdapter(childFragmentManager)
-        tablayout_category_title.setupWithViewPager(viewpager_category_item)
+        ll_category_entertain.onClick {
+            startActivity<CategoryContentActivity>()
+        }
+
     }
 }

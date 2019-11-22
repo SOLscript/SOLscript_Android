@@ -9,12 +9,14 @@ import com.good.solscript.databinding.RecyclerSelectedItemBinding
 
 class SelectedAdapter : RecyclerView.Adapter<SelectedAdapter.SelectedViewHolder>() {
 
-    class SelectedViewHolder(val binding : RecyclerSelectedItemBinding) : RecyclerView.ViewHolder(binding.root)
+    class SelectedViewHolder(val binding: RecyclerSelectedItemBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     var data = listOf<SelectedData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectedViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_selected_item,parent,false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.recycler_selected_item, parent, false)
         return SelectedViewHolder(RecyclerSelectedItemBinding.bind(view))
     }
 

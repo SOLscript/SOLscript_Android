@@ -1,18 +1,18 @@
 /*
-* Copyright (C) 2014 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.good.solscript.adapter;
 
@@ -31,7 +31,6 @@ import com.good.solscript.util.CustomUsageStats;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -41,34 +40,6 @@ public class UsageListAdapter extends RecyclerView.Adapter<UsageListAdapter.View
 
     private List<CustomUsageStats> mCustomUsageStatsList = new ArrayList<>();
     private DateFormat mDateFormat = new SimpleDateFormat();
-
-    /**
-     * Provide a reference to the type of views that you are using (custom ViewHolder)
-     */
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView mPackageName;
-        private final TextView mLastTimeUsed;
-        private final ImageView mAppIcon;
-
-        public ViewHolder(View v) {
-            super(v);
-            mPackageName = (TextView) v.findViewById(R.id.textview_package_name);
-            mLastTimeUsed = (TextView) v.findViewById(R.id.textview_last_time_used);
-            mAppIcon = (ImageView) v.findViewById(R.id.app_icon);
-        }
-
-        public TextView getLastTimeUsed() {
-            return mLastTimeUsed;
-        }
-
-        public TextView getPackageName() {
-            return mPackageName;
-        }
-
-        public ImageView getAppIcon() {
-            return mAppIcon;
-        }
-    }
 
     public UsageListAdapter() {
     }
@@ -96,7 +67,7 @@ public class UsageListAdapter extends RecyclerView.Adapter<UsageListAdapter.View
 
         String time = String.format("%02d시간 %02d분 %02d초 ", hour, minute, second);
 
-        Log.d("leastTimeUsed   ",""+time);
+        Log.d("leastTimeUsed   ", "" + time);
         viewHolder.getLastTimeUsed().setText(time);
 
         viewHolder.getAppIcon().setImageDrawable(mCustomUsageStatsList.get(position).appIcon);
@@ -109,5 +80,33 @@ public class UsageListAdapter extends RecyclerView.Adapter<UsageListAdapter.View
 
     public void setCustomUsageStatsList(List<CustomUsageStats> customUsageStats) {
         mCustomUsageStatsList = customUsageStats;
+    }
+
+    /**
+     * Provide a reference to the type of views that you are using (custom ViewHolder)
+     */
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        private final TextView mPackageName;
+        private final TextView mLastTimeUsed;
+        private final ImageView mAppIcon;
+
+        public ViewHolder(View v) {
+            super(v);
+            mPackageName = v.findViewById(R.id.textview_package_name);
+            mLastTimeUsed = v.findViewById(R.id.textview_last_time_used);
+            mAppIcon = v.findViewById(R.id.app_icon);
+        }
+
+        public TextView getLastTimeUsed() {
+            return mLastTimeUsed;
+        }
+
+        public TextView getPackageName() {
+            return mPackageName;
+        }
+
+        public ImageView getAppIcon() {
+            return mAppIcon;
+        }
     }
 }

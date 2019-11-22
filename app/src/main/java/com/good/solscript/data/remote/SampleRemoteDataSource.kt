@@ -7,10 +7,10 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-object SampleRemoteDataSource{
+object SampleRemoteDataSource {
     private const val BASE_URL = "https://jsonplaceholder.typicode.com"
 
-    val sampleRetrofit : NetworkService = Retrofit.Builder()
+    val sampleRetrofit: NetworkService = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()

@@ -4,7 +4,6 @@ package com.good.solscript.ui
 import android.annotation.SuppressLint
 import android.app.usage.UsageStats
 import android.app.usage.UsageStatsManager
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -183,7 +182,10 @@ class SubscriptManageFragment : Fragment() {
     private class LeastTimeLaunchedComparatorAsc : Comparator<UsageStats> {
 
         override fun compare(left: UsageStats, right: UsageStats): Int {
-            Log.d("compare  ",""+right.totalTimeInForeground.compareTo(left.totalTimeInForeground))
+            Log.d(
+                "compare  ",
+                "" + right.totalTimeInForeground.compareTo(left.totalTimeInForeground)
+            )
             return right.totalTimeInForeground.compareTo(left.totalTimeInForeground)
         }
     }

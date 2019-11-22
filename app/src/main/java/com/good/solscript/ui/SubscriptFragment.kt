@@ -42,8 +42,10 @@ class SubscriptFragment : Fragment() {
         val bottomNaviLayout: View =
             this.layoutInflater.inflate(R.layout.tablayout_mysubscript_top, null, false)
 
-        tabLayout.getTabAt(0)!!.customView = bottomNaviLayout.findViewById(R.id.rl_mysubfrag_calendar) as RelativeLayout
-        tabLayout.getTabAt(1)!!.customView = bottomNaviLayout.findViewById(R.id.rl_mysubfrag_manage) as RelativeLayout
+        tabLayout.getTabAt(0)!!.customView =
+            bottomNaviLayout.findViewById(R.id.rl_mysubfrag_calendar) as RelativeLayout
+        tabLayout.getTabAt(1)!!.customView =
+            bottomNaviLayout.findViewById(R.id.rl_mysubfrag_manage) as RelativeLayout
 
     }
 }
