@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.good.solscript.R
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.support.v4.startActivity
 
@@ -39,7 +38,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    fun setClickListener(){
+    fun setClickListener() {
         rl_homefragment_calender.setOnClickListener {
             callFragment(1)
         }
@@ -79,3 +78,4 @@ class HomeFragment : Fragment() {
 
 
 }
+

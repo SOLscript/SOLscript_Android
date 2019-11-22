@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.good.solscript.R
 import com.good.solscript.adapter.MySubscribeViewPagerAdapter
-import kotlinx.android.synthetic.main.fragment_subscript.*
 import kotlinx.android.synthetic.main.fragment_subscript.view.*
 
 
@@ -26,9 +25,6 @@ class SubscriptFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_subscript, container, false)
 
         configureBottomNavigation(view)
-
-
-
         return view
     }
 

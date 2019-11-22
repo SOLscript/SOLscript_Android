@@ -18,6 +18,7 @@ import com.good.solscript.data.SampleRepository
 import kotlinx.android.synthetic.main.fragment_subscript_calendar.*
 import com.good.solscript.data.SelectedData
 import com.prolificinteractive.materialcalendarview.CalendarDay
+import org.jetbrains.anko.support.v4.startActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,6 +51,10 @@ class SubscriptCalendarFragment : Fragment() {
 
         getSampleResponse()
         setCalendarView()
+
+        tv_calendarfrag_analysisbtn.setOnClickListener {
+            startActivity<AnalysisActivity>()
+        }
 
         tv_calendarfrag_changebtn.setOnClickListener {
 
