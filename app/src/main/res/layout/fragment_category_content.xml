@@ -7,8 +7,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_fakelist"
-        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="380dp"
         android:layout_height="match_parent" />
-
 
 </FrameLayout>
