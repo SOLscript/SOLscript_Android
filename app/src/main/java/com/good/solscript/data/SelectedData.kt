@@ -10,5 +10,9 @@ data class SelectedData(
     @SerializedName("id")
     val id: String,
     @SerializedName("img")
-    val img : String
+    val img: String,
+    @SerializedName("price")
+    val price: String,
+    @SerializedName("pay")
+    val pay: String
 )

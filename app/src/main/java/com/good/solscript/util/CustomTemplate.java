@@ -15,6 +15,8 @@ import java.util.List;
  */
 public class CustomTemplate {
 
+    public static final int colorAccent = -256;
+
     /**
      * an "invalid" color that indicates that no color is set
      */
