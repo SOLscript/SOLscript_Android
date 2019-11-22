@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="analysisData"
             type="com.good.solscript.data.AnalysisData" />
@@ -47,7 +46,7 @@
             android:layout_marginEnd="16dp"
             android:lineSpacingExtra="3sp"
             android:layout_marginBottom="12dp"
-            android:text="60.8%"
+            setPercent="@{analysisData.percent}"
             android:textColor="#3a4047"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/appCompatSeekBar"
@@ -60,6 +59,9 @@
             android:layout_marginBottom="32dp"
             android:layout_width="match_parent"
             android:layout_height="7dp"
+            android:max="100"
+            setProgress="@{analysisData.percent}"
+            android:thumb="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
