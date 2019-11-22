@@ -15,6 +15,8 @@ import java.util.List;
  */
 public class CustomTemplate {
 
+    public static final int colorAccent = -256;
+
     /**
      * an "invalid" color that indicates that no color is set
      */
@@ -32,7 +34,11 @@ public class CustomTemplate {
      */
     public static final int[] SHINHAN_COLORS = {
             Color.rgb(234, 87, 156), Color.rgb(240, 144, 197),
-            Color.rgb(248, 213, 233), Color.rgb(241, 244, 246)
+            Color.rgb(248, 213, 233), Color.rgb(241, 244, 246),
+            Color.rgb(249, 41, 141),
+            Color.rgb(252, 111, 187),
+            Color.rgb(254, 199, 229),
+            Color.rgb(162, 167, 173)
     };
 
     /**

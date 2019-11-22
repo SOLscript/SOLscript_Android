@@ -35,7 +35,6 @@ class HomeFragment : Fragment() {
 
         callFragment(1)
         setClickListener()
-
     }
 
     fun setClickListener() {
@@ -75,7 +74,5 @@ class HomeFragment : Fragment() {
         transaction.replace(R.id.fl_homefragment_container, nowFrag)
         transaction.commit()
     }
-
-
 }
 

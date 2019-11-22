@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.SubscriptFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,16 +18,15 @@
             android:text="@string/my_subscript_manage"
             android:textColor="@color/white"
             android:textSize="18sp" />
-
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tl_mysubscriptfrag_top"
-            app:tabIndicatorHeight="4dp"
-            app:tabSelectedTextColor="@color/pink"
-            app:tabTextColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/colorPrimary" />
-
+            android:background="@color/colorPrimary"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="@color/pink"
+            app:tabIndicatorHeight="4dp"
+            />
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_mysubscriptfrag_container"
             android:layout_width="match_parent"
