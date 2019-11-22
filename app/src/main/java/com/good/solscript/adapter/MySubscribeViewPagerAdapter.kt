@@ -10,6 +10,7 @@ class MySubscribeViewPagerAdapter(fm: FragmentManager) :
     FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private var fragList = listOf("calendar", "manage")
+//    private val fragList = listOf("구독 내", "사용량 분석")
 
     override fun getItem(position: Int): Fragment {
         return when (position) {

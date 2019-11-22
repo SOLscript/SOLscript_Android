@@ -2,6 +2,7 @@ package com.good.solscript.ui
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,8 @@ import org.jetbrains.anko.support.v4.startActivity
  * A simple [Fragment] subclass.
  */
 class HomeFragment : Fragment() {
+
+    private lateinit var nowFrag: Fragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,5 +33,45 @@ class HomeFragment : Fragment() {
             startActivity<ChatActivity>()
         }
 
+        callFragment(1)
+        setClickListener()
+    }
+
+    fun setClickListener(){
+        rl_homefragment_calender.setOnClickListener {
+            callFragment(1)
+        }
+
+        rl_homefragment_subscript.setOnClickListener {
+            callFragment(2)
+        }
+
+        rl_homefragment_used.setOnClickListener {
+            callFragment(3)
+        }
+
+    }
+
+    private fun callFragment(frag: Int) {
+
+        when (frag) {
+            1 -> {
+                nowFrag = HomeCalenderFragment()
+            }
+
+            2 -> {
+                nowFrag = HomeSubscriptFragment()
+            }
+
+            3 -> {
+                nowFrag = HomeUsedFragment()
+            }
+        }
+
+        Log.d("callFragment", "  ")
+
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.replace(R.id.fl_homefragment_container, nowFrag)
+        transaction.commit()
     }
 }

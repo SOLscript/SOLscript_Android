@@ -10,6 +10,7 @@
         statistics. You may need to enable access
         for this app through Settings > Security > Apps with usage access
     </string>
+    <string name="my_subscript_manage">내 구독 관리</string>
     <string-array name="action_list">
         <item>Daily</item>
         <item>Weekly</item>

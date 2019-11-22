@@ -64,8 +64,8 @@ class SubscriptCalendarFragment : Fragment() {
             }else{
                 rv_calendarfrag_samplelist.visibility = View.GONE
                 cl_calendarfrag_containier.visibility = View.VISIBLE
-            }
 
+            }
         }
     }
 
@@ -121,6 +121,7 @@ class SubscriptCalendarFragment : Fragment() {
         dataList.add(SelectedData("Netflix","${date.year}/${date.month}/${date.day}","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png","9,500원", "매 달 갱신"))
         dataList.add(SelectedData("베이컨박스","${date.year}/${date.month}/${date.day}","0","https://image.rocketpunch.com/company/37100/baconcompany_logo_1553485713.jpg?s=400x400&t=inside","32,400원", "매 달 갱신"))
         dataList.add(SelectedData("플로","${date.year}/${date.month}/${date.day}","0","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwVpuJ5FE7wCdDI44kbt5Pyemr__xKFng1QX2vwa6GRZox_KPJ&s","9,500원", "매 달 갱신"))
+
         selectedAdapter.data = dataList!!
         selectedAdapter.notifyDataSetChanged()
 
