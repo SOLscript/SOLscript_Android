@@ -107,7 +107,9 @@
         <FrameLayout
             android:id="@+id/fl_homefragment_container"
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
+            android:layout_height="300dp" >
+
+        </FrameLayout>
     </LinearLayout>
 
     <FrameLayout
@@ -145,6 +147,7 @@
                 android:src="@drawable/artboard_11_copy_3_x_100" />
 
 
+
         </LinearLayout>
 
 
@@ -156,7 +159,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="80dp"
         app:backgroundTint="@color/gray1"
         android:src="@drawable/icons_8_chatbot_80"
         app:layout_constraintBottom_toBottomOf="parent"

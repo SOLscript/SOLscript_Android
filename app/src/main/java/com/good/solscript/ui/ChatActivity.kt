@@ -38,7 +38,7 @@ class ChatActivity : AppCompatActivity() {
 
     private fun setChatRecyclerView() {
 
-        dataList.add(ChatData("WELCOME!!", "chatbot"))
+        dataList.add(ChatData("안녕하세요 soly입니다 반가워요!!", "chatbot"))
 
         chatAdapter.data = dataList
         chatAdapter.notifyDataSetChanged()

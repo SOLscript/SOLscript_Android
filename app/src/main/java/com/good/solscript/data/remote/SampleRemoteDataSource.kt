@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object SampleRemoteDataSource {
     private const val SAMPLE_URL = "https://jsonplaceholder.typicode.com"
-    private const val CHAT_URL = "https://d4d4ac74.ngrok.io"
+    private const val CHAT_URL = "https://210f7a0c.ngrok.io"
     private const val BASE_URL = "https://5ab52606.ngrok.io"
 
 
