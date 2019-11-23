@@ -14,7 +14,8 @@
             android:id="@+id/tb_mysubfrag_calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="calendar"
+            android:text="구독 관리"
+            android:textSize="16sp"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 
@@ -27,7 +28,8 @@
             android:id="@+id/tb_mysubfrag_manage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="manage"
+            android:text="사용량 분석"
+            android:textSize="16sp"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.good.solscript.R
 import com.good.solscript.ui.SliderMainFragment
 
 class SliderMainPagerAdapter(fm: FragmentManager, private val num_fragment: Int) :
@@ -21,17 +22,17 @@ class SliderMainPagerAdapter(fm: FragmentManager, private val num_fragment: Int)
 
         //Fragment별 배경이미지 지정
         when (p0) {
-            0 -> bundle.putString(
+            0 -> bundle.putInt(
                 "background_url",
-                "https://user-images.githubusercontent.com/35513039/69457669-f1c75880-0db0-11ea-8967-8b34f931c108.png"
+                R.drawable.category_banner_1
             )
-            1 -> bundle.putString(
+            1 -> bundle.putInt(
                 "background_url",
-                "https://user-images.githubusercontent.com/35513039/69457669-f1c75880-0db0-11ea-8967-8b34f931c108.png"
+                R.drawable.category_banner_2
             )
-            2 -> bundle.putString(
+            2 -> bundle.putInt(
                 "background_url",
-                "https://user-images.githubusercontent.com/35513039/69457669-f1c75880-0db0-11ea-8967-8b34f931c108.png"
+                R.drawable.category_banner_3
             )
         }
         //Bundle 객체를 arguments에 전달
