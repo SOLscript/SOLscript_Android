@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="categoryData"
+            type="com.good.solscript.data.CategoryData" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_rv_matching_item_container"
+        android:layout_width="172dp"
+        android:layout_height="222dp"
+        android:layout_margin="12dp"
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1f000000" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_rv_matching_item_img"
+                    setImage="@{categoryData.img}"
+                    android:layout_width="match_parent"
+                    android:layout_height="155dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/iv_category_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/like_selector" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginVertical="11dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="-0.01"
+                    android:lineSpacingExtra="9sp"
+                    android:text="@{categoryData.appname}"
+                    android:textColor="#de000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="-0.05"
+                    android:lineSpacingExtra="7sp"
+                    android:text="@{categoryData.description}"
+                    android:textColor="#99000000"
+                    android:textSize="13sp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

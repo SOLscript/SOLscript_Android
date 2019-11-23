@@ -60,10 +60,12 @@ class SubscriptCalendarFragment : Fragment() {
             if (cl_calendarfrag_containier.visibility == View.VISIBLE) {
                 cl_calendarfrag_containier.visibility = View.GONE
                 rv_calendarfrag_samplelist.visibility = View.VISIBLE
+                fab_calendarfrag_showlist.setImageResource(R.drawable.icons_8_calendar_96_1)
+
             } else {
                 rv_calendarfrag_samplelist.visibility = View.GONE
                 cl_calendarfrag_containier.visibility = View.VISIBLE
-
+                fab_calendarfrag_showlist.setImageResource(R.drawable.icons_8_list_96)
             }
         }
     }
@@ -113,7 +115,7 @@ class SubscriptCalendarFragment : Fragment() {
             setCalendarSelectedRecyclerView(date)
 
             dates.add(CalendarDay.from(date.year, date.month, date.day))
-            cv_calendarfrag_calendar.addDecorator(EventDecorator(Color.MAGENTA, dates))
+            cv_calendarfrag_calendar.addDecorator(EventDecorator(Color.BLUE, dates))
         }
 
     }

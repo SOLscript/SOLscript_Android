@@ -2,6 +2,7 @@ package com.good.solscript.ui
 
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.mikephil.charting.data.PieData
@@ -22,6 +23,15 @@ class AnalysisActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_analysis)
 
+        iv_analysisact_prev.setOnClickListener {
+            Toast.makeText(applicationContext, "이전 달 통신", Toast.LENGTH_SHORT).show()
+        }
+
+        iv_analysisact_next.setOnClickListener {
+            Toast.makeText(applicationContext, "다음 달 통산", Toast.LENGTH_SHORT).show()
+        }
+
+
         setAnalysisRecyclerView()
     }
 
@@ -30,9 +40,10 @@ class AnalysisActivity : AppCompatActivity() {
         pc_analysisact_moneychart.setUsePercentValues(true)
         pc_analysisact_moneychart.setExtraOffsets(5F, 10F, 5F, 5F)
 
-        pc_analysisact_moneychart.dragDecelerationFrictionCoef = 0.95f
+        pc_analysisact_moneychart.dragDecelerationFrictionCoef = 0.5f
 
         pc_analysisact_moneychart.isDrawHoleEnabled = true
+
         pc_analysisact_moneychart.setHoleColor(Color.TRANSPARENT)
         pc_analysisact_moneychart.transparentCircleRadius = 44f
         pc_analysisact_moneychart.animateY(1800)
@@ -48,11 +59,13 @@ class AnalysisActivity : AppCompatActivity() {
         dataSet.selectionShift = 5f
         dataSet.setColors(*CustomTemplate.SHINHAN_COLORS)
 
+        pc_analysisact_moneychart.setCenterTextColor(Color.WHITE)
+        pc_analysisact_moneychart.centerText = "총\n22,300원"
+
         val data = PieData(dataSet)
         data.setValueTextSize(10f)
-        data.setValueTextColor(Color.WHITE)
         data.isHighlightEnabled = true
-
+        data.setValueTextColor(Color.WHITE)
         pc_analysisact_moneychart.data = data
     }
 

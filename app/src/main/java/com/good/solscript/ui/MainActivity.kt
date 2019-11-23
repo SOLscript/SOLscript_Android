@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.good.solscript.R
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.image
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        iv_maintab_home.setImageResource(R.drawable.tab_ic_home_pink)
         callFragment(1)
         setClickListener()
 
@@ -40,14 +42,23 @@ class MainActivity : AppCompatActivity() {
 
         when (frag) {
             1 -> {
+                iv_maintab_home.setImageResource(R.drawable.tab_ic_home_pink)
+                iv_maintab_categoty.setImageResource(R.drawable.tab_ic_category_grey)
+                iv_maintab_mysub.setImageResource(R.drawable.tab_ic_mysub_grey)
                 nowFrag = HomeFragment()
             }
 
             2 -> {
+                iv_maintab_home.setImageResource(R.drawable.tab_ic_home_grey)
+                iv_maintab_categoty.setImageResource(R.drawable.tab_ic_category_pink)
+                iv_maintab_mysub.setImageResource(R.drawable.tab_ic_mysub_grey)
                 nowFrag = CategoryFragment()
             }
 
             3 -> {
+                iv_maintab_home.setImageResource(R.drawable.tab_ic_home_grey)
+                iv_maintab_categoty.setImageResource(R.drawable.tab_ic_category_grey)
+                iv_maintab_mysub.setImageResource(R.drawable.tab_ic_mysub_pink)
                 nowFrag = SubscriptFragment()
             }
         }

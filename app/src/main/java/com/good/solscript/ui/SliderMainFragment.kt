@@ -24,7 +24,7 @@ class SliderMainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val imgUrl: String? = arguments?.getString("background_url")
+        val imgUrl: Int? = arguments?.getInt("background_url")
         //val color: Int = arguments!!.getInt("background_color")
         //img_fragment_slider_main.setBackgroundColor(color)
         Log.d("background_url", "" + imgUrl)

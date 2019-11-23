@@ -41,7 +41,7 @@ class ChatActivity : AppCompatActivity() {
 
     private fun sendTextMessage() {
 
-        var message = et_chatact_inputtext.text.toString()
+        val message = et_chatact_inputtext.text.toString()
         chatAdapter.addItem(ChatData(message, "", me = true))
         et_chatact_inputtext.setText("")
 

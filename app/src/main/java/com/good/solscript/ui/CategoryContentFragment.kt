@@ -8,10 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.good.solscript.R
+import com.good.solscript.adapter.CategoryAdapter
 import com.good.solscript.adapter.FakeRecyclerViewAdapter
+import com.good.solscript.data.CategoryData
 import com.good.solscript.data.SampleData
 import com.good.solscript.data.SampleRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -26,6 +29,8 @@ class CategoryContentFragment : Fragment() {
     private val repository by lazy { SampleRepository() }
     private val fakeList by lazy { mutableListOf<SampleData>() }
     private val fakeAdapter = FakeRecyclerViewAdapter()
+
+    private val categoryAdapter = CategoryAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +48,8 @@ class CategoryContentFragment : Fragment() {
         //val categoryName = arguments?.getString(CATEGORY_NAME)
 
         Log.d("onActivityCreatedLog", "")
-        recyclerViewSetup()
+        //recyclerViewSetup()
+        categoryRecyclerViewSetup()
 
         repository.getFakeDatas()
             .observeOn(AndroidSchedulers.mainThread())
@@ -78,5 +84,74 @@ class CategoryContentFragment : Fragment() {
             fragment.arguments = bundle
             return fragment
         }
+    }
+
+    private fun categoryRecyclerViewSetup() {
+
+        val dataList = arrayListOf<CategoryData>()
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "0",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                false
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "1",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                true
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "2",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                false
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "0",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                false
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "1",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                true
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "2",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                false
+            )
+        )
+
+        categoryAdapter.data = dataList
+        categoryAdapter.notifyDataSetChanged()
+
+        recyclerview_fakelist?.run {
+            adapter = categoryAdapter
+            layoutManager = GridLayoutManager(activity, 2)
+        }
+
+
     }
 }
