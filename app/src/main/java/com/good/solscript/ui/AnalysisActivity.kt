@@ -16,6 +16,8 @@ import kotlinx.android.synthetic.main.activity_analysis.*
 
 class AnalysisActivity : AppCompatActivity() {
 
+
+
     private val analysisAdapter by lazy { AnalysisAdapter() }
     var data = ArrayList<AnalysisData>()
 
@@ -30,7 +32,6 @@ class AnalysisActivity : AppCompatActivity() {
         iv_analysisact_next.setOnClickListener {
             Toast.makeText(applicationContext, "다음 달 통산", Toast.LENGTH_SHORT).show()
         }
-
 
         setAnalysisRecyclerView()
     }

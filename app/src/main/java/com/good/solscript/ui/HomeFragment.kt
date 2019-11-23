@@ -64,6 +64,10 @@ class HomeFragment : Fragment() {
                 Log.d("commandList_err", "fail " + it.message)
             })
 
+        iv_homefrag_mypagebtn.setOnClickListener {
+            startActivity<MypageActivity>()
+        }
+
     }
     private fun recyclerViewInit() {
         rv_recomand?.run {

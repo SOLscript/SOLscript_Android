@@ -20,7 +20,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:padding="8dp"
-            android:src="@drawable/chatbot_ic" />
+            android:src="@drawable/chatbot_ic_logo" />
 
         <TextView
             android:id="@+id/tv_chatyouritem_contents"

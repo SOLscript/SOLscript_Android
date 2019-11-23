@@ -58,7 +58,7 @@ fun setRcoudCornerImage(view: ImageView, profile: String) {
 
 @BindingAdapter("price","pay")
 fun setPayInfo(view: TextView, price: Int, pay : String) {
-    view.text = price.toString() + "/" + pay
+    view.text = "월 "+price.toString() + "원 /" + pay
 }
 
 @BindingAdapter("plusBoolean", "plusPercent")

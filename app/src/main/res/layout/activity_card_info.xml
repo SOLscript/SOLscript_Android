@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CardRegisterActivity">
+    <RelativeLayout
+        android:id="@+id/rl_cardact_top"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_cardinfoact_backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:padding="8dp"
+            android:src="@drawable/back_arrow_ic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="-0.02"
+            android:lineSpacingExtra="20sp"
+            android:textColor="#3a4047"
+            android:textSize="16sp"
+            android:text="카드 등록" />
+
+
+        <TextView
+            android:id="@+id/tv_cardinfoact_registerbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#3a4047"
+            android:letterSpacing="-0.02"
+            android:lineSpacingExtra="20sp"
+            android:layout_centerVertical="true"
+            android:padding="16dp"
+            android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:text="등록"
+            />
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="#abadc4"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="283dp"
+        android:layout_height="171dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/aircard_big_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_cardact_top" />
+
+
+    <LinearLayout
+        android:layout_marginTop="44dp"
+        android:layout_width="312dp"
+        android:layout_height="187dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <RelativeLayout
+            android:layout_marginHorizontal="12dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카드번호"
+                android:textSize="14sp"
+                android:textColor="#3a4047"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="22sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/et_cardinfoact_cardnum"
+                android:paddingVertical="4dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="108dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="14sp"
+                android:textColor="#a8abae"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="22sp"
+                android:hint="‘-‘를 제외하고 입력"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginHorizontal="12dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CVC2"
+                android:textSize="14sp"
+                android:textColor="#3a4047"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="22sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/et_cardinfoact_cvc2"
+                android:paddingVertical="4dp"
+                android:maxLength="3"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="108dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="14sp"
+                android:textColor="#a8abae"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="22sp"
+                android:hint="카드 뒷면 3자리 입력"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginHorizontal="12dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="유효기간"
+                android:textSize="14sp"
+                android:textColor="#3a4047"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="22sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/et_cardinfoact_valid"
+                android:paddingVertical="4dp"
+                android:maxLength="2"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="108dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="14sp"
+                android:textColor="#a8abae"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="22sp"
+                android:hint="앞 2자리 입력"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginHorizontal="12dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카드 비밀번호"
+                android:textSize="14sp"
+                android:textColor="#3a4047"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="22sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/et_cardinfoact_password"
+                android:paddingVertical="4dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="108dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="14sp"
+                android:textColor="#a8abae"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="22sp"
+                android:password="true"
+                android:maxLength="2"
+                android:hint="앞 2자리 입력"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -101,9 +101,9 @@ class SubscriptManageFragment : Fragment() {
         val dataList = arrayListOf<ManageData>()
 
         dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", false, 10))
-        dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", true, 30))
-        dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", true, 30))
-        dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", false, 90))
+        dataList.add(ManageData("풀무원","0","https://modoctest.s3.ap-northeast-2.amazonaws.com/1574519728123.png",9900, "매 달 갱신", true, 30))
+        dataList.add(ManageData("Naver Cloud","0","https://modoctest.s3.ap-northeast-2.amazonaws.com/1574507027962.jpeg",8000, "매 달 갱신", true, 30))
+        dataList.add(ManageData("Google Cloud","0","https://modoctest.s3.ap-northeast-2.amazonaws.com/1574507149865.jpeg",3000, "매 달 갱신", false, 90))
         manageAdapter.data = dataList
         manageAdapter.notifyDataSetChanged()
 

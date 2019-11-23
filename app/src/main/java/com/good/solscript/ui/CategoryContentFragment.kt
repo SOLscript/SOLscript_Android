@@ -2,13 +2,11 @@ package com.good.solscript.ui
 
 
 import android.annotation.SuppressLint
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.good.solscript.R
@@ -25,7 +23,7 @@ class CategoryContentFragment : Fragment() {
 
 
     private val repository by lazy { SampleRepository() }
-    private val categoryList by lazy { mutableListOf<List<ResponseCategorySubData>>() }
+    private val categoryList by lazy { mutableListOf<ResponseCategorySubData>() }
     private val categoryAdapter = CategoryAdapter()
 
     override fun onCreateView(
@@ -42,8 +40,7 @@ class CategoryContentFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val categoryName = arguments?.getString(CATEGORY_NAME)
-        progress_circular.visibility = View.VISIBLE
-        Log.d("categoryName", ""+categoryName)
+        Log.d("categoryName", "" + categoryName)
         categoryRecyclerViewSetup()
 
         repository.getCategoryDatas(categoryName!!)
@@ -52,10 +49,12 @@ class CategoryContentFragment : Fragment() {
                 it.responseCategoryData.responseCategorySubData
             }
             .subscribe({
-                categoryList.add(it)
-                categoryAdapter.data = it
+                it.map {
+                    categoryList.add(it)
+                    categoryAdapter.data = categoryList
+
+                }
                 Log.d("list", "categoryList" + it)
-                progress_circular.visibility = View.INVISIBLE
             }, {
                 Log.d("categoryList_err", "fail" + it.message)
             })

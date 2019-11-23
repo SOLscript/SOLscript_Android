@@ -4,6 +4,7 @@ import android.net.Uri
 import android.view.View
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.good.solscript.R
 import com.good.solscript.data.ResponseRecommandSubData
 import kotlinx.android.synthetic.main.recyclerview_recommand_item.view.*

@@ -17,7 +17,7 @@ object SampleRemoteDataSource {
 
 
     val sampleRetrofit: NetworkService = Retrofit.Builder()
-        .baseUrl(SAMPLE_URL)
+        .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(NetworkService::class.java)
