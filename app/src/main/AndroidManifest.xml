@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.DetailedActivity"></activity>
+        <activity android:name=".ui.DetailedActivity" />
         <activity android:name=".ui.CategoryContentActivity" />
         <activity android:name=".ui.ChatActivity" />
         <activity android:name=".ui.AnalysisActivity" />

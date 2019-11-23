@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.good.solscript.R
 import com.good.solscript.data.CategoryData
 import com.good.solscript.databinding.RecyclerCategoryItemBinding
+import com.good.solscript.databinding.RecyclerSelectedItemBinding
 
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
@@ -17,7 +18,6 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_category_item, parent, false)
-
         return CategoryViewHolder(RecyclerCategoryItemBinding.bind(view))
     }
 
