@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CardRegisterActivity">
+    <RelativeLayout
+        android:id="@+id/rl_cardact_top"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_cardact_backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:padding="8dp"
+            android:src="@drawable/back_arrow_ic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="-0.02"
+            android:lineSpacingExtra="20sp"
+            android:textColor="#3a4047"
+            android:textSize="16sp"
+            android:text="카드 관리" />
+
+        <TextView
+            android:id="@+id/tv_cardact_addbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#3a4047"
+            android:letterSpacing="-0.02"
+            android:lineSpacingExtra="20sp"
+            android:layout_centerVertical="true"
+            android:padding="16dp"
+            android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:text="추가"
+            android:textStyle="bold"
+            />
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:background="#abadc4"/>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

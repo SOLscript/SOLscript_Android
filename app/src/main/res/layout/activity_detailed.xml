@@ -1,170 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_height="match_parent"
-    tools:context=".ui.DetailedActivity">
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/round_button_point" />
-
-    <RelativeLayout
-        android:id="@+id/rl_detailedact_backcontainer"
-        android:layout_width="match_parent"
-        android:layout_height="360dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/iv_detailedact_backimg"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="360dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/cms_temp_article_27095639085207" />
+            android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="360dp"
-            android:background="#5b000000" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.DetailedActivity">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/round_button_point" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_detailedact_backcontainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_detailedact_backimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="360dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/cms_temp_article_27095639085207" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="360dp"
+                        android:background="#5b000000" />
 
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp">
 
-            <ImageView
-                android:id="@+id/iv_detailedact_backbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:src="@drawable/backarrow_ic" />
+                        <ImageView
+                            android:id="@+id/iv_detailedact_backbtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:src="@drawable/backarrow_ic" />
 
-            <ImageView
-                android:id="@+id/iv_detailedact_heartselector"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:padding="8dp"
-                android:src="@drawable/like_selector" />
+                        <ImageView
+                            android:id="@+id/iv_detailedact_heartselector"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:padding="8dp"
+                            android:src="@drawable/like_selector" />
 
-        </RelativeLayout>
+                    </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/ll_detailedact_appinfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="36dp"
-            android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/ll_detailedact_appinfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="36dp"
+                        android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_detailedact_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:letterSpacing="-0.03"
-                android:lineSpacingExtra="21sp"
-                android:text="무제한으로 즐기는 5만 권의 도서"
-                android:textColor="#ffffff"
-                android:textSize="15sp" />
+                        <TextView
+                            android:id="@+id/tv_detailedact_subtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="-0.03"
+                            android:lineSpacingExtra="21sp"
+                            android:text="무제한으로 즐기는 5만 권의 도서"
+                            android:textColor="#ffffff"
+                            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tv_detailedact_appname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:letterSpacing="-0.02"
-                android:lineSpacingExtra="11sp"
-                android:text="밀리의 서재"
-                android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                        <TextView
+                            android:id="@+id/tv_detailedact_appname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:letterSpacing="-0.02"
+                            android:lineSpacingExtra="11sp"
+                            android:text="밀리의 서재"
+                            android:textColor="#ffffff"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_detailedact_backcontainer"
+                    android:layout_marginTop="-20dp"
+                    android:background="@drawable/right_round_top_gray">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="25dp">
+
+                            <LinearLayout
+                                android:id="@+id/ll_detailedact_sortcontainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="22dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="19dp"
+                                    android:letterSpacing="-0.02"
+                                    android:lineSpacingExtra="20sp"
+                                    android:text="종류"
+                                    android:textColor="#3a4047"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_detailedact_sort"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:letterSpacing="-0.02"
+                                    android:lineSpacingExtra="20sp"
+                                    android:text="월정액 독서앱"
+                                    android:textColor="#3a4047"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ll_detailedact_sortcontainer"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="7dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="19dp"
+                                    android:letterSpacing="-0.02"
+                                    android:lineSpacingExtra="20sp"
+                                    android:text="가격"
+                                    android:textColor="#3a4047"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_detailedact_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:letterSpacing="-0.02"
+                                    android:lineSpacingExtra="20sp"
+                                    android:text="월 9,900원"
+                                    android:textColor="#3a4047"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_detailedact_banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/sub_1474" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginVertical="24dp"
+                            android:letterSpacing="-0.02"
+                            android:lineSpacingExtra="19sp"
+                            android:text="서비스 상세 설명"
+                            android:textColor="#3a4047"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv_detailedact_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="가나다라마바사아자차카 구독구독\n
+이거는 새로운 구독구독\n
+편리한 구독구독\n
+\n
+ 배송은 어쩌구 택배회사를 통해 저쩌구 합니다.\n
+ 3-5일정도 소요되며 수량따라 다름\n
+\n
+오늘먹은 족발은 너무너무 맛있었고\n
+3개월 이상 구독 시 10% 싸질까요 안싸질까요\n
+\n
+그 후엔 그렇게 주문을 해주시고 뒤로 돌아서 하이파이브를 해주세요 제작 방법은 일단 이렇게 그 후엔 그렇게
+족발 맛있다\n" />
+
+                        <ImageView
+                            android:id="@+id/iv_detailedact_img0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/detail_img"/>
+                        <ImageView
+                            android:id="@+id/iv_detailedact_img1"
+                            android:scaleType="fitXY"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:id="@+id/iv_detailedact_img2"
+                            android:scaleType="fitXY"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:id="@+id/iv_detailedact_img3"
+                            android:scaleType="fitXY"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <ImageView
+                            android:id="@+id/iv_detailedact_img4"
+                            android:scaleType="fitXY"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
     </RelativeLayout>
 
-    <RelativeLayout
+    <TextView
+        android:text="구독하기"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="20sp"
+        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rl_detailedact_backcontainer"
-        android:layout_marginTop="-20dp"
-        android:background="@drawable/back_417">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="25dp">
-
-            <LinearLayout
-                android:id="@+id/ll_detailedact_sortcontainer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="22dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="19dp"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="20sp"
-                    android:text="종류"
-                    android:textColor="#3a4047"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_detailedact_sort"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="20sp"
-                    android:text="월정액 독서앱"
-                    android:textColor="#3a4047"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ll_detailedact_sortcontainer"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="7dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="19dp"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="20sp"
-                    android:text="가격"
-                    android:textColor="#3a4047"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_detailedact_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:letterSpacing="-0.02"
-                    android:lineSpacingExtra="20sp"
-                    android:text="월 9,900원"
-                    android:textColor="#3a4047"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </RelativeLayout>
-
-
-    </RelativeLayout>
-
-
-</RelativeLayout>
+        android:layout_height="60dp"
+        android:background="@drawable/round_button_point"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

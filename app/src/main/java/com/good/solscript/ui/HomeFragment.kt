@@ -44,6 +44,10 @@ class HomeFragment : Fragment() {
             "     visible    " + HomeCalenderFragment().isVisible + "  " + HomeSubscriptFragment().isVisible + "   " + HomeUsedFragment().isVisible
         )
 
+        iv_homefrag_mypagebtn.setOnClickListener {
+            startActivity<MypageActivity>()
+        }
+
     }
 
     fun setClickListener() {
