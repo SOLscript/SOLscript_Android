@@ -2,22 +2,19 @@ package com.good.solscript.ui
 
 
 import android.annotation.SuppressLint
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.good.solscript.R
 import com.good.solscript.adapter.CategoryAdapter
-import com.good.solscript.adapter.FakeRecyclerViewAdapter
-import com.good.solscript.data.CategoryData
-import com.good.solscript.data.SampleData
+import com.good.solscript.data.ResponseCategorySubData
 import com.good.solscript.data.SampleRepository
-import com.good.solscript.data.SubscriptData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_category_content.*
 
@@ -28,9 +25,7 @@ class CategoryContentFragment : Fragment() {
 
 
     private val repository by lazy { SampleRepository() }
-    private val fakeList by lazy { mutableListOf<SampleData>() }
-    private val fakeAdapter = FakeRecyclerViewAdapter()
-
+    private val categoryList by lazy { mutableListOf<List<ResponseCategorySubData>>() }
     private val categoryAdapter = CategoryAdapter()
 
     override fun onCreateView(
@@ -46,32 +41,24 @@ class CategoryContentFragment : Fragment() {
     @SuppressLint("CheckResult")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //val categoryName = arguments?.getString(CATEGORY_NAME)
-
-        Log.d("onActivityCreatedLog", "")
-        //recyclerViewSetup()
+        val categoryName = arguments?.getString(CATEGORY_NAME)
+        progress_circular.visibility = View.VISIBLE
+        Log.d("categoryName", ""+categoryName)
         categoryRecyclerViewSetup()
 
-        repository.getFakeDatas()
+        repository.getCategoryDatas(categoryName!!)
             .observeOn(AndroidSchedulers.mainThread())
+            .map {
+                it.responseCategoryData.responseCategorySubData
+            }
             .subscribe({
-                Log.d("list", "fakeList" + fakeList)
-                it.map {
-                    fakeList.add(it)
-                    fakeAdapter.setData(fakeList)
-                }
-                //fakeList.add(it)
-
+                categoryList.add(it)
+                categoryAdapter.data = it
+                Log.d("list", "categoryList" + it)
+                progress_circular.visibility = View.INVISIBLE
             }, {
-                Log.d("fakeList_err", "fail" + it.message)
+                Log.d("categoryList_err", "fail" + it.message)
             })
-    }
-
-    private fun recyclerViewSetup() {
-        recyclerview_fakelist?.run {
-            adapter = fakeAdapter
-            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        }
     }
 
     companion object {
@@ -88,20 +75,9 @@ class CategoryContentFragment : Fragment() {
     }
 
 
-    private fun categoryRecyclerViewSetup(){
+    private fun categoryRecyclerViewSetup() {
 
-        val dataList = arrayListOf<CategoryData>()
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "0", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", false))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "1", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", true))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "2", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", false))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "0", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", false))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "1", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", true))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "2", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", false))
-
-        categoryAdapter.data = dataList
-        categoryAdapter.notifyDataSetChanged()
-
-        recyclerview_fakelist?.run {
+        recyclerview_categorylist?.run {
             adapter = categoryAdapter
             layoutManager = GridLayoutManager(activity, 2)
         }

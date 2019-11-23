@@ -18,13 +18,13 @@ class SliderMainPagerAdapter(fm: FragmentManager, private val num_fragment: Int)
         val fragment = SliderMainFragment()
 
         //한 개 bundle에 담길 데이터의 개수 지정
-        val bundle = Bundle(1)
+        val bundle = Bundle()
 
         //Fragment별 배경이미지 지정
         when (p0) {
             0 -> bundle.putInt(
                 "background_url",
-                R.drawable.category_banner_1
+                R.drawable.category_banner_3
             )
             1 -> bundle.putInt(
                 "background_url",

@@ -30,18 +30,11 @@
                     android:orientation="horizontal">
 
 
-                    <TextView
-                        android:id="@+id/textView"
+                    <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="60dp"
-                        android:layout_marginEnd="200dp"
-                        android:gravity="center_vertical"
-                        android:paddingStart="16dp"
-                        android:text="SOLscription"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/home_logo"
+                        android:layout_marginEnd="200dp"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -74,7 +67,7 @@
                         android:id="@+id/tv_home_calender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="캘린더"
+                        android:text="My"
                         android:textColor="@color/white" />
                 </RelativeLayout>
 
@@ -117,7 +110,45 @@
             android:layout_height="300dp" />
     </LinearLayout>
 
-    <include layout="@layout/layout_recomand" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="320dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_top"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:text="요즘 20대 남성에게 가장 인기 많은 구독 서비스"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recomand"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/artboard_11_copy_3_x_100" />
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -125,8 +156,9 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="80dp"
-        android:src="@drawable/ic_chat_white_24dp"
+        android:layout_marginBottom="120dp"
+        app:backgroundTint="@color/gray1"
+        android:src="@drawable/icons_8_chatbot_80"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
