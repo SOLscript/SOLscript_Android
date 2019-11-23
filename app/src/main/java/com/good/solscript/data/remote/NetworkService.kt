@@ -1,5 +1,6 @@
 package com.good.solscript.data.remote
 
+import com.good.solscript.data.ChatData
 import com.good.solscript.data.SampleData
 import io.reactivex.Single
 import retrofit2.Call
@@ -12,4 +13,9 @@ interface NetworkService {
 
     @GET("/posts")
     fun getFakeDatas(): Single<List<SampleData>>
+
+    @GET("/dialogflow")
+    fun getChatBot(): Single<ChatData>
+
+
 }

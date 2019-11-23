@@ -1,6 +1,7 @@
 package com.good.solscript.ui
 
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -33,20 +34,37 @@ class HomeFragment : Fragment() {
             startActivity<ChatActivity>()
         }
 
+        tv_home_calender.setTextColor(Color.parseColor("#fd479e"))
         callFragment(1)
         setClickListener()
+
+        Log.d(
+            "homeFragmentVisible",
+            "     visible    " + HomeCalenderFragment().isVisible + "  " + HomeSubscriptFragment().isVisible + "   " + HomeUsedFragment().isVisible
+        )
+
     }
 
     fun setClickListener() {
         rl_homefragment_calender.setOnClickListener {
+            tv_home_calender.setTextColor(Color.parseColor("#fd479e"))
+            tv_home_mysubscipt.setTextColor(Color.parseColor("#ffffff"))
+            tv_home_used.setTextColor(Color.parseColor("#ffffff"))
             callFragment(1)
+
         }
 
         rl_homefragment_subscript.setOnClickListener {
+            tv_home_calender.setTextColor(Color.parseColor("#ffffff"))
+            tv_home_mysubscipt.setTextColor(Color.parseColor("#fd479e"))
+            tv_home_used.setTextColor(Color.parseColor("#ffffff"))
             callFragment(2)
         }
 
         rl_homefragment_used.setOnClickListener {
+            tv_home_calender.setTextColor(Color.parseColor("#ffffff"))
+            tv_home_mysubscipt.setTextColor(Color.parseColor("#ffffff"))
+            tv_home_used.setTextColor(Color.parseColor("#fd479e"))
             callFragment(3)
         }
 

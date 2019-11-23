@@ -17,7 +17,6 @@ import com.good.solscript.adapter.FakeRecyclerViewAdapter
 import com.good.solscript.data.CategoryData
 import com.good.solscript.data.SampleData
 import com.good.solscript.data.SampleRepository
-import com.good.solscript.data.SubscriptData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_category_content.*
 
@@ -87,15 +86,63 @@ class CategoryContentFragment : Fragment() {
         }
     }
 
-    private fun categoryRecyclerViewSetup(){
+    private fun categoryRecyclerViewSetup() {
 
         val dataList = arrayListOf<CategoryData>()
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "0", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", false))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "1", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", true))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "2", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", false))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "0", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", false))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "1", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", true))
-        dataList.add(CategoryData("Netflix", "취향 저격 뮤직 서비스", "2", "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", false))
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "0",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                false
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "1",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                true
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "2",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                false
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "0",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                false
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "1",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                true
+            )
+        )
+        dataList.add(
+            CategoryData(
+                "Netflix",
+                "취향 저격 뮤직 서비스",
+                "2",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                false
+            )
+        )
 
         categoryAdapter.data = dataList
         categoryAdapter.notifyDataSetChanged()

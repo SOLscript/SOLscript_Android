@@ -18,10 +18,14 @@ class CategoryContentActivity : AppCompatActivity() {
         iv_back.onClick {
             finish()
         }
+
+        val tabNumber = intent.getIntExtra("tabNumber", 0)
+        tablayout_category_title.getTabAt(tabNumber)?.select()
     }
 
     private fun configureMainTab() {
         viewpager_category_item.adapter = CategoryViewPagerAdapter(supportFragmentManager)
         tablayout_category_title.setupWithViewPager(viewpager_category_item)
     }
+
 }
