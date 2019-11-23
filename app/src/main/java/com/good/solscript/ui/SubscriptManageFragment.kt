@@ -6,6 +6,7 @@ import android.app.usage.UsageStats
 import android.app.usage.UsageStatsManager
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
@@ -14,37 +15,36 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.components.YAxis
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.utils.ColorTemplate
 import com.good.solscript.R
+import com.good.solscript.adapter.ManageAdapter
 import com.good.solscript.adapter.UsageListAdapter
+import com.good.solscript.data.ManageData
+import com.good.solscript.util.CustomTemplate
 import com.good.solscript.util.CustomUsageStats
+import kotlinx.android.synthetic.main.fragment_subscript_manage.*
 import java.util.*
+import kotlin.collections.ArrayList
+import com.github.mikephil.charting.data.BarDataSet as BarDataSet
 
 /**
  * A simple [Fragment] subclass.
  */
 class SubscriptManageFragment : Fragment() {
 
-    private val TAG = SubscriptManageFragment::class.java.simpleName
+    private val manageAdapter by lazy { ManageAdapter() }
 
-    //VisibleForTesting for variables below
-    private lateinit var mUsageStatsManager: UsageStatsManager
-    private lateinit var mUsageListAdapter: UsageListAdapter
-    private lateinit var mRecyclerView: RecyclerView
-    private lateinit var mLayoutManager: RecyclerView.LayoutManager
-    private lateinit var mOpenUsageSettingButton: Button
-    private lateinit var mSpinner: Spinner
-
-    fun newInstance(): SubscriptManageFragment {
-        return SubscriptManageFragment()
-    }
 
     @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        mUsageStatsManager = activity
-            ?.getSystemService("usagestats") as UsageStatsManager //Context.USAGE_STATS_SERVICE
     }
 
     override fun onCreateView(
@@ -58,164 +58,75 @@ class SubscriptManageFragment : Fragment() {
     override fun onViewCreated(rootView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(rootView, savedInstanceState)
 
-        mUsageListAdapter = UsageListAdapter()
-        mRecyclerView = rootView.findViewById<View>(R.id.recyclerview_app_usage) as RecyclerView
-        mLayoutManager = mRecyclerView.layoutManager!!
-        mRecyclerView.scrollToPosition(0)
-        mRecyclerView.adapter = mUsageListAdapter
-        mOpenUsageSettingButton =
-            rootView.findViewById<View>(R.id.button_open_usage_setting) as Button
-        mSpinner = rootView.findViewById<View>(R.id.spinner_time_span) as Spinner
-        val spinnerAdapter = ArrayAdapter.createFromResource(
-            this.context!!,
-            R.array.action_list, android.R.layout.simple_spinner_dropdown_item
-        )
-        mSpinner.adapter = spinnerAdapter
-        mSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            var strings = resources.getStringArray(R.array.action_list)
-
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View,
-                position: Int,
-                id: Long
-            ) {
-                val statsUsageInterval = StatsUsageInterval
-                    .getValue(strings[position])
-                if (statsUsageInterval != null) {
-                    val usageStatsList = getUsageStatistics(statsUsageInterval.mInterval)
-                    Collections.sort(usageStatsList, LeastTimeLaunchedComparatorAsc())
-                    updateAppsList(usageStatsList)
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {}
-        }
+        setManagerRecyclerView()
+        setBarChart()
     }
 
-    /**
-     * Returns the [.mRecyclerView] including the time span specified by the
-     * intervalType argument.
-     *
-     * @param intervalType The time interval by which the stats are aggregated.
-     * Corresponding to the value of [UsageStatsManager].
-     * E.g. [UsageStatsManager.INTERVAL_DAILY], [                     ][UsageStatsManager.INTERVAL_WEEKLY],
-     *
-     * @return A list of [android.app.usage.UsageStats].
-     */
-    fun getUsageStatistics(intervalType: Int): List<UsageStats> {
-        // Get the app statistics since one year ago from the current time.
-        val cal = Calendar.getInstance()
-        cal.add(Calendar.YEAR, -1)
+    fun setBarChart(){
 
-        val queryUsageStats = mUsageStatsManager
-            .queryUsageStats(
-                intervalType, cal.timeInMillis,
-                System.currentTimeMillis()
-            )
+        var barEntry = ArrayList<BarEntry>()
+        var barEntryLabel = ArrayList<String>()
 
-        if (queryUsageStats.size == 0) {
-            Log.i(TAG, "The user may not allow the access to apps usage. ")
-            Toast.makeText(
-                activity,
-                getString(R.string.explanation_access_to_appusage_is_not_enabled),
-                Toast.LENGTH_LONG
-            ).show()
-            mOpenUsageSettingButton.visibility = View.VISIBLE
-            mOpenUsageSettingButton.setOnClickListener {
-                startActivity(
-                    Intent(
-                        Settings.ACTION_USAGE_ACCESS_SETTINGS
-                    )
-                )
-            }
-        }
-        return queryUsageStats
+        barEntry.add(BarEntry(1f,60f))
+        barEntry.add(BarEntry(2f,90f))
+        barEntry.add(BarEntry(3f,30f))
+        barEntry.add(BarEntry(4f,70f))
+        barEntry.add(BarEntry(5f,20f))
+        barEntry.add(BarEntry(6f,20f))
+
+        barEntryLabel.add("6월")
+        barEntryLabel.add("7월")
+        barEntryLabel.add("8월")
+        barEntryLabel.add("9월")
+        barEntryLabel.add("10월")
+        barEntryLabel.add("11월")
+
+        val barDataSet = BarDataSet(barEntry,"project")
+        barDataSet.setColors(*CustomTemplate.SHINHAN_COLORS_0)
+
+        val barData = BarData(barDataSet)
+        barData.barWidth = 0.4f
+        val description = Description()
+        description.text = ""
+
+        bc_managefrag_usagechart.description = description
+
+
+        var yLAxis = bc_managefrag_usagechart.axisLeft
+        yLAxis.setDrawLabels(false)
+        yLAxis.setDrawAxisLine(false)
+        yLAxis.setDrawGridLines(false)
+
+        var yRAxis = bc_managefrag_usagechart.axisRight
+        yRAxis.setDrawLabels(false)
+        yRAxis.setDrawAxisLine(false)
+        yRAxis.setDrawGridLines(false)
+
+        bc_managefrag_usagechart.xAxis.textColor = Color.WHITE
+        bc_managefrag_usagechart.xAxis.position = XAxis.XAxisPosition.BOTTOM
+
+        bc_managefrag_usagechart.xAxis.setDrawGridLines(false)
+
+        bc_managefrag_usagechart.data = barData
+        bc_managefrag_usagechart.animateY(2000)
     }
 
-    /**
-     * Updates the [.mRecyclerView] with the list of [UsageStats] passed as an argument.
-     *
-     * @param usageStatsList A list of [UsageStats] from which update the
-     * [.mRecyclerView].
-     */
-    //VisibleForTesting
-    internal fun updateAppsList(usageStatsList: List<UsageStats>) {
-        val customUsageStatsList = ArrayList<CustomUsageStats>()
-        for (i in usageStatsList.indices) {
-            val customUsageStats = CustomUsageStats()
-            customUsageStats.usageStats = usageStatsList[i]
-            try {
-                val appIcon = activity?.packageManager!!
-                    .getApplicationIcon(customUsageStats.usageStats.packageName)
-                customUsageStats.appIcon = appIcon
-            } catch (e: PackageManager.NameNotFoundException) {
-                Log.w(
-                    TAG, String.format(
-                        "App Icon is not found for %s",
-                        customUsageStats.usageStats.packageName
-                    )
-                )
-                customUsageStats.appIcon = activity
-                    ?.getDrawable(R.drawable.ic_launcher_foreground)
-            }
+    fun setManagerRecyclerView(){
+        val dataList = arrayListOf<ManageData>()
 
-            customUsageStatsList.add(customUsageStats)
+        dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", false, 10))
+        dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", true, 30))
+        dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", true, 30))
+        dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", false, 90))
+        manageAdapter.data = dataList
+        manageAdapter.notifyDataSetChanged()
+
+        rv_managefrag_analysislist.apply {
+            layoutManager = LinearLayoutManager(activity?.applicationContext)
+            adapter = manageAdapter
         }
-        mUsageListAdapter.setCustomUsageStatsList(customUsageStatsList)
-        mUsageListAdapter.notifyDataSetChanged()
-        mRecyclerView.scrollToPosition(0)
+
     }
 
-    /**
-     * The [Comparator] to sort a collection of [UsageStats] sorted by the timestamp
-     * last time the app was used in the descendant order.
-     */
-    private class LastTimeLaunchedComparatorDesc : Comparator<UsageStats> {
 
-        override fun compare(left: UsageStats, right: UsageStats): Int {
-            return left.lastTimeUsed.compareTo(right.lastTimeUsed)
-        }
-    }
-
-    private class LeastTimeLaunchedComparatorAsc : Comparator<UsageStats> {
-
-        override fun compare(left: UsageStats, right: UsageStats): Int {
-            Log.d(
-                "compare  ",
-                "" + right.totalTimeInForeground.compareTo(left.totalTimeInForeground)
-            )
-            return right.totalTimeInForeground.compareTo(left.totalTimeInForeground)
-        }
-    }
-
-    /**
-     * Enum represents the intervals for [android.app.usage.UsageStatsManager] so that
-     * values for intervals can be found by a String representation.
-     *
-     */
-    //VisibleForTesting
-    internal enum class StatsUsageInterval constructor(
-        val mStringRepresentation: String,
-        val mInterval: Int
-    ) {
-        DAILY("Daily", UsageStatsManager.INTERVAL_DAILY),
-        WEEKLY("Weekly", UsageStatsManager.INTERVAL_WEEKLY),
-        MONTHLY("Monthly", UsageStatsManager.INTERVAL_MONTHLY),
-        YEARLY("Yearly", UsageStatsManager.INTERVAL_YEARLY);
-
-
-        companion object {
-
-            fun getValue(stringRepresentation: String): StatsUsageInterval? {
-                for (statsUsageInterval in values()) {
-                    if (statsUsageInterval.mStringRepresentation == stringRepresentation) {
-                        return statsUsageInterval
-                    }
-                }
-                return null
-            }
-        }
-    }
 }

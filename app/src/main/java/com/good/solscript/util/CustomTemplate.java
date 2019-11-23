@@ -41,6 +41,12 @@ public class CustomTemplate {
             Color.rgb(162, 167, 173)
     };
 
+    public static final int[] SHINHAN_COLORS_0 = {
+            Color.rgb(249, 249, 249),Color.rgb(249, 249, 249),Color.rgb(249, 249, 249),Color.rgb(249, 249, 249),
+            Color.rgb(249, 249, 249)
+    };
+
+
     /**
      * Converts the given hex-color-string to rgb.
      *

@@ -42,7 +42,7 @@ class AnalysisActivity : AppCompatActivity() {
 
         pc_analysisact_moneychart.dragDecelerationFrictionCoef = 0.5f
 
-        pc_analysisact_moneychart.isDrawHoleEnabled = true
+//        pc_analysisact_moneychart.isDrawHoleEnabled = true
 
         pc_analysisact_moneychart.setHoleColor(Color.TRANSPARENT)
         pc_analysisact_moneychart.transparentCircleRadius = 44f
@@ -61,6 +61,7 @@ class AnalysisActivity : AppCompatActivity() {
 
         pc_analysisact_moneychart.setCenterTextColor(Color.WHITE)
         pc_analysisact_moneychart.centerText = "총\n22,300원"
+        pc_analysisact_moneychart.setCenterTextSize(16f)
 
         val data = PieData(dataSet)
         data.setValueTextSize(10f)
@@ -79,7 +80,7 @@ class AnalysisActivity : AppCompatActivity() {
         analysisAdapter.data = data
         analysisAdapter.notifyDataSetChanged()
 
-        rv_analysisact_analysislist.apply {
+        rv_managefrag_analysislist.apply {
             layoutManager = LinearLayoutManager(applicationContext)
             adapter = analysisAdapter
         }
