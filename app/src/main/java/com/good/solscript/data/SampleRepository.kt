@@ -10,4 +10,7 @@ class SampleRepository {
 
     fun getSampleDates(): Call<List<SampleData>> =
         SampleRemoteDataSource.sampleRetrofit.getSample()
+
+    fun postChatDatas(postChatRequest: PostChatRequest):Single<ChatData> =
+        SampleRemoteDataSource.postChatData(postChatRequest)
 }

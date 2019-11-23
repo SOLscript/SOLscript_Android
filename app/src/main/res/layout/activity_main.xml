@@ -26,10 +26,12 @@
             android:layout_weight="1"
             android:background="@color/white"
             android:gravity="center">
+
             <ImageView
+                android:id="@+id/iv_maintab_home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_home_gray" />
+                android:src="@drawable/tab_ic_home_grey" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -41,13 +43,10 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/iv_maintab_categoty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_category_gray" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@drawable/tab_ic_category_grey" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -59,13 +58,10 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/iv_maintab_mysub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_myscript_gray" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@drawable/tab_ic_mysub_grey" />
         </RelativeLayout>
 
     </LinearLayout>

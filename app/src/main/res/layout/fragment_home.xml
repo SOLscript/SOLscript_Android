@@ -68,10 +68,10 @@
                     android:id="@+id/rl_homefragment_calender"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/tv_home_calender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="캘린더"
@@ -82,10 +82,10 @@
                     android:id="@+id/rl_homefragment_subscript"
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/tv_home_mysubscipt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="내 구독 관리"
@@ -96,10 +96,10 @@
                     android:id="@+id/rl_homefragment_used"
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/tv_home_used"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="온라인 사용량"

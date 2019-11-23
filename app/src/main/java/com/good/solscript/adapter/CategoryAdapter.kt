@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.good.solscript.R
 import com.good.solscript.data.CategoryData
-import com.good.solscript.data.SelectedData
 import com.good.solscript.databinding.RecyclerCategoryItemBinding
 import com.good.solscript.databinding.RecyclerSelectedItemBinding
 

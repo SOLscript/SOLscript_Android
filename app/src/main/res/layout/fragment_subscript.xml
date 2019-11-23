@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.SubscriptFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,20 +14,22 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/white"
             android:gravity="center"
             android:text="@string/my_subscript_manage"
-            android:textColor="@color/white"
+            android:textColor="@color/gray5"
             android:textSize="18sp" />
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tl_mysubscriptfrag_top"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/colorPrimary"
-            app:tabTextColor="@color/white"
-            app:tabSelectedTextColor="@color/pink"
+            android:background="@color/white"
             app:tabIndicatorHeight="4dp"
-            />
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/pink"
+            app:tabTextColor="@color/white" />
+
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_mysubscriptfrag_container"
             android:layout_width="match_parent"

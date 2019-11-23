@@ -87,6 +87,7 @@ class CategoryContentFragment : Fragment() {
         }
     }
 
+
     private fun categoryRecyclerViewSetup(){
 
         val dataList = arrayListOf<CategoryData>()

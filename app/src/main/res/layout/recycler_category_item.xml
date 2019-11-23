@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
         <variable
             name="categoryData"
             type="com.good.solscript.data.CategoryData" />
     </data>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:id="@+id/rl_rv_matching_item_container"
         android:layout_width="172dp"
         android:layout_height="222dp"
@@ -30,6 +30,15 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/iv_category_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/like_selector" />
                 <ImageView
                     android:id="@+id/iv_rv_matching_item_img"
                     android:layout_width="match_parent"
