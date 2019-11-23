@@ -17,7 +17,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="30dp"
             android:src="@color/black"
-            setImage="@{selectedData.img}"
+            setCircleImg="@{selectedData.img}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

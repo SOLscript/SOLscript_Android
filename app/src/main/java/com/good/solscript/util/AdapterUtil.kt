@@ -9,11 +9,18 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 
+@BindingAdapter("setCircleImg")
+fun setCircleImageUrl(view: ImageView, profile: String) {
+    Glide.with(view.context)
+        .load(profile)
+        .apply(RequestOptions.circleCropTransform())
+        .into(view)
+}
+
 @BindingAdapter("setImage")
 fun setImageUrl(view: ImageView, profile: String) {
     Glide.with(view.context)
         .load(profile)
-        .apply(RequestOptions.circleCropTransform())
         .into(view)
 }
 
