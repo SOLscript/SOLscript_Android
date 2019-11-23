@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginRight="100dp"
         android:gravity="center_vertical">
 
@@ -25,13 +25,13 @@
         <TextView
             android:id="@+id/tv_chatyouritem_contents"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_toRightOf="@+id/iv_chatyouritem_img"
+            android:padding="8dp"
+            android:layout_toEndOf="@+id/iv_chatyouritem_img"
             android:background="@drawable/your_chat"
             android:gravity="center_vertical"
-            android:paddingHorizontal="12dp"
-            android:text="@{chatData.contents}"
+            android:text="@{chatData.response}"
             android:textColor="@color/white" />
     </RelativeLayout>
 </layout>

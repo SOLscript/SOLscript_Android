@@ -35,6 +35,7 @@ class HomeFragment : Fragment() {
         }
 
         tv_home_calender.setTextColor(Color.parseColor("#fd479e"))
+        tv_home_calender.textSize = 16f
         callFragment(1)
         setClickListener()
 
@@ -50,6 +51,9 @@ class HomeFragment : Fragment() {
             tv_home_calender.setTextColor(Color.parseColor("#fd479e"))
             tv_home_mysubscipt.setTextColor(Color.parseColor("#ffffff"))
             tv_home_used.setTextColor(Color.parseColor("#ffffff"))
+            tv_home_calender.textSize = 16f
+            tv_home_mysubscipt.textSize = 14f
+            tv_home_used.textSize = 14f
             callFragment(1)
 
         }
@@ -58,6 +62,9 @@ class HomeFragment : Fragment() {
             tv_home_calender.setTextColor(Color.parseColor("#ffffff"))
             tv_home_mysubscipt.setTextColor(Color.parseColor("#fd479e"))
             tv_home_used.setTextColor(Color.parseColor("#ffffff"))
+            tv_home_calender.textSize = 14f
+            tv_home_mysubscipt.textSize = 16f
+            tv_home_used.textSize = 14f
             callFragment(2)
         }
 
@@ -65,6 +72,9 @@ class HomeFragment : Fragment() {
             tv_home_calender.setTextColor(Color.parseColor("#ffffff"))
             tv_home_mysubscipt.setTextColor(Color.parseColor("#ffffff"))
             tv_home_used.setTextColor(Color.parseColor("#fd479e"))
+            tv_home_calender.textSize = 14f
+            tv_home_mysubscipt.textSize = 14f
+            tv_home_used.textSize = 16f
             callFragment(3)
         }
 

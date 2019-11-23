@@ -20,9 +20,9 @@ class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var data = arrayListOf<ChatData>()
 
     override fun getItemViewType(position: Int): Int {
-        val chatMessage = data.get(position)
+        val chatMessage = data[position]
 
-        return if (chatMessage.me) {
+        return if (chatMessage.id=="me") {
             0
         } else {
             1
@@ -61,12 +61,12 @@ class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         val chatMessage = data[position]
 
-        if (chatMessage.me) {
-            var holderMyViewHolder: ChatMyViewHolder = holder as ChatMyViewHolder
+        if (chatMessage.id=="me") {
+            val holderMyViewHolder: ChatMyViewHolder = holder as ChatMyViewHolder
             holderMyViewHolder.binding.chatData = data[position]
 
         } else {
-            var holderYourViewHolder: ChatYourViewHolder = holder as ChatYourViewHolder
+            val holderYourViewHolder: ChatYourViewHolder = holder as ChatYourViewHolder
             holderYourViewHolder.binding.chatData = data[position]
         }
     }
