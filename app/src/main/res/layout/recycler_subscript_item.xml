@@ -91,7 +91,7 @@
                     android:id="@+id/iv_recycleritem_morebtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/buttona_back"
+                    android:src="@drawable/buttona_next"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

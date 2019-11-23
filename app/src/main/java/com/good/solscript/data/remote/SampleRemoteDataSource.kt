@@ -12,11 +12,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 object SampleRemoteDataSource {
     private const val SAMPLE_URL = "https://jsonplaceholder.typicode.com"
     private const val CHAT_URL = "https://d4d4ac74.ngrok.io"
-    private const val BASE_URL = "https://127.0.0.1"
+    private const val BASE_URL = "https://5ab52606.ngrok.io"
 
 
     val sampleRetrofit: NetworkService = Retrofit.Builder()
-        .baseUrl(SAMPLE_URL)
+        .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(NetworkService::class.java)

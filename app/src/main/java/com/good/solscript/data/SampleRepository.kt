@@ -13,4 +13,14 @@ class SampleRepository {
 
     fun postChatDatas(postChatRequest: PostChatRequest):Single<ChatData> =
         SampleRemoteDataSource.postChatData(postChatRequest)
+
+    fun getTotalMoneyDatas(month : Int) : Call<ResponseTotalMoneyData> =
+        SampleRemoteDataSource.sampleRetrofit.getTotalMoney(month)
+
+    fun getCategoryTotalMoneyDatas(month : Int) : Call<ResponseCategoryTotalData> =
+        SampleRemoteDataSource.sampleRetrofit.getCategoryMoney(month)
+
+
+    fun postRegisterCardData(cardInfo : PostCardRequest) : Call<ResponseRegisterCard> =
+        SampleRemoteDataSource.sampleRetrofit.postRegisterCard(cardInfo)
 }
