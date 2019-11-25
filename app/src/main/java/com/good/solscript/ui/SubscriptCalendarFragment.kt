@@ -75,13 +75,13 @@ class SubscriptCalendarFragment : Fragment() {
         getTotalMoneyResponse(11)
 
         cv_calendarfrag_calendar.setOnMonthChangedListener { widget, date ->
-            Log.e(CALENDARFRAGMENT,"ㅎㅇ "+ date.month.toString()+"ㅎㅎ" +date)
-            getTotalMoneyResponse(date.month+1)
+            Log.e(CALENDARFRAGMENT, "ㅎㅇ " + date.month.toString() + "ㅎㅎ" + date)
+            getTotalMoneyResponse(date.month + 1)
         }
 
     }
 
-    private fun getTotalMoneyResponse(month : Int){
+    private fun getTotalMoneyResponse(month: Int) {
         repository.getTotalMoneyDatas(month).enqueue(
             object : Callback<ResponseTotalMoneyData> {
                 override fun onFailure(call: Call<ResponseTotalMoneyData>, t: Throwable) {
@@ -97,9 +97,9 @@ class SubscriptCalendarFragment : Fragment() {
                         Log.e(CALENDARFRAGMENT, data.toString())
                         Log.e(CALENDARFRAGMENT, data!!.totalMoney.toString())
 
-                        data?.let {
+                        data.let {
 
-                            tv_calendarfrag_totalmoney.text = " "+ it.totalMoney.toString() + " 원"
+                            tv_calendarfrag_totalmoney.text = " " + it.totalMoney.toString() + " 원"
                             settingCalendarView(it)
 
                         }
@@ -110,25 +110,25 @@ class SubscriptCalendarFragment : Fragment() {
         )
     }
 
-    private fun settingCalendarView(data : ResponseTotalMoneyData){
+    private fun settingCalendarView(data: ResponseTotalMoneyData) {
 
         var dates: ArrayList<CalendarDay> = ArrayList()
 
-        var monthDateArrayList=  data.message
+        var monthDateArrayList = data.message
         val dataList = arrayListOf<SelectedData>()
 
 
-        for( (i, dayData) in monthDateArrayList.withIndex()){
+        for ((i, dayData) in monthDateArrayList.withIndex()) {
 
             var day = dayData.date.split("-")
 
-            var calendarDay = CalendarDay.from(day[0].toInt(),day[1].toInt()+1,day[2].toInt())
+            var calendarDay = CalendarDay.from(day[0].toInt(), day[1].toInt() + 1, day[2].toInt())
 
             dates.add(calendarDay)
             cv_calendarfrag_calendar.addDecorator(EventDecorator(Color.BLUE, dates))
-            Log.e("tag","calendarDay"+calendarDay.toString())
+            Log.e("tag", "calendarDay" + calendarDay.toString())
 
-            for ((j,detailData) in monthDateArrayList[i].subList.withIndex()){
+            for ((j, detailData) in monthDateArrayList[i].subList.withIndex()) {
 
                 dataList.add(
                     SelectedData(
@@ -160,13 +160,13 @@ class SubscriptCalendarFragment : Fragment() {
         dates.add(CalendarDay.from(2019, 9, 23))
         dates.add(CalendarDay.from(2019, 9, 14))
         dates.add(CalendarDay.from(2019, 9, 11))
-        dates.add(CalendarDay.from(2019, 9,3))
+        dates.add(CalendarDay.from(2019, 9, 3))
 
 
         dates.add(CalendarDay.from(2019, 10, 23))
         dates.add(CalendarDay.from(2019, 10, 14))
         dates.add(CalendarDay.from(2019, 10, 11))
-        dates.add(CalendarDay.from(2019, 10,3))
+        dates.add(CalendarDay.from(2019, 10, 3))
 
         cv_calendarfrag_calendar.addDecorator(EventDecorator(Color.BLUE, dates))
 
@@ -190,7 +190,7 @@ class SubscriptCalendarFragment : Fragment() {
         cv_calendarfrag_calendar.setOnDateChangedListener { widget, date, selected ->
             Toast.makeText(
                 context,
-                "${date.year}년  ${date.month+1}월 ${date.day}일",
+                "${date.year}년  ${date.month + 1}월 ${date.day}일",
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -247,8 +247,15 @@ class SubscriptCalendarFragment : Fragment() {
 
         val dataList = arrayListOf<SubscriptData>()
         dataList.add(
-            SubscriptData("https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png", "Netflix",
-                0, 7000, "1달", "10월 11일", "11월 12일")
+            SubscriptData(
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                "Netflix",
+                0,
+                7000,
+                "1달",
+                "10월 11일",
+                "11월 12일"
+            )
         )
         dataList.add(
             SubscriptData(

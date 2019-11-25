@@ -5,15 +5,19 @@
     <item android:id="@android:id/background">
         <shape android:shape="line">
             <corners android:radius="8dip" />
-            <stroke android:width="6dp" android:color="#ebebeb" />
+            <stroke
+                android:width="6dp"
+                android:color="#ebebeb" />
         </shape>
     </item>
 
-    <item android:id="@android:id/progress" >
+    <item android:id="@android:id/progress">
         <clip>
             <shape android:shape="line">
                 <corners android:radius="8dip" />
-                <stroke android:width="6dp" android:color="#fd479e" />
+                <stroke
+                    android:width="6dp"
+                    android:color="#fd479e" />
             </shape>
         </clip>
     </item>

@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.activity_analysis.*
 class AnalysisActivity : AppCompatActivity() {
 
 
-
     private val analysisAdapter by lazy { AnalysisAdapter() }
     var data = ArrayList<AnalysisData>()
 

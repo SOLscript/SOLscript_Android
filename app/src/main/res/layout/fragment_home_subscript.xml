@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="12dp"
-        android:textColor="@color/white"
-        android:text="총 223,700원"
         android:elevation="1dp"
+        android:text="총 223,700원"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />

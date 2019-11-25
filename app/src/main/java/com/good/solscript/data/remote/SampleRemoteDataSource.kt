@@ -44,7 +44,7 @@ object SampleRemoteDataSource {
         rxRetrofit.getCategoryList(category)
             .subscribeOn(Schedulers.io())
 
-    fun getRecommandData():Single<ResponseRecommand> =
+    fun getRecommandData(): Single<ResponseRecommand> =
         rxRetrofit.getRecommand()
             .subscribeOn(Schedulers.io())
 

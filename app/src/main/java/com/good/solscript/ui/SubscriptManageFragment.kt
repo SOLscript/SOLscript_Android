@@ -48,17 +48,17 @@ class SubscriptManageFragment : Fragment() {
         setBarChart()
     }
 
-    fun setBarChart(){
+    fun setBarChart() {
 
         var barEntry = ArrayList<BarEntry>()
         var barEntryLabel = ArrayList<String>()
 
-        barEntry.add(BarEntry(1f,60f))
-        barEntry.add(BarEntry(2f,90f))
-        barEntry.add(BarEntry(3f,30f))
-        barEntry.add(BarEntry(4f,70f))
-        barEntry.add(BarEntry(5f,20f))
-        barEntry.add(BarEntry(6f,20f))
+        barEntry.add(BarEntry(1f, 60f))
+        barEntry.add(BarEntry(2f, 90f))
+        barEntry.add(BarEntry(3f, 30f))
+        barEntry.add(BarEntry(4f, 70f))
+        barEntry.add(BarEntry(5f, 20f))
+        barEntry.add(BarEntry(6f, 20f))
 
         barEntryLabel.add("6월")
         barEntryLabel.add("7월")
@@ -67,7 +67,7 @@ class SubscriptManageFragment : Fragment() {
         barEntryLabel.add("10월")
         barEntryLabel.add("11월")
 
-        val barDataSet = BarDataSet(barEntry,"project")
+        val barDataSet = BarDataSet(barEntry, "project")
         barDataSet.setColors(*CustomTemplate.SHINHAN_COLORS_0)
 
         val barData = BarData(barDataSet)
@@ -97,13 +97,53 @@ class SubscriptManageFragment : Fragment() {
         bc_managefrag_usagechart.animateY(2000)
     }
 
-    fun setManagerRecyclerView(){
+    fun setManagerRecyclerView() {
         val dataList = arrayListOf<ManageData>()
 
-        dataList.add(ManageData("Netflix","0","https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",9500, "매 달 갱신", false, 10))
-        dataList.add(ManageData("풀무원","0","https://modoctest.s3.ap-northeast-2.amazonaws.com/1574519728123.png",9900, "매 달 갱신", true, 30))
-        dataList.add(ManageData("Naver Cloud","0","https://modoctest.s3.ap-northeast-2.amazonaws.com/1574507027962.jpeg",8000, "매 달 갱신", true, 30))
-        dataList.add(ManageData("Google Cloud","0","https://modoctest.s3.ap-northeast-2.amazonaws.com/1574507149865.jpeg",3000, "매 달 갱신", false, 90))
+        dataList.add(
+            ManageData(
+                "Netflix",
+                "0",
+                "https://images-na.ssl-images-amazon.com/images/I/41Ix1vMUK7L._SY355_.png",
+                9500,
+                "매 달 갱신",
+                false,
+                10
+            )
+        )
+        dataList.add(
+            ManageData(
+                "풀무원",
+                "0",
+                "https://modoctest.s3.ap-northeast-2.amazonaws.com/1574519728123.png",
+                9900,
+                "매 달 갱신",
+                true,
+                30
+            )
+        )
+        dataList.add(
+            ManageData(
+                "Naver Cloud",
+                "0",
+                "https://modoctest.s3.ap-northeast-2.amazonaws.com/1574507027962.jpeg",
+                8000,
+                "매 달 갱신",
+                true,
+                30
+            )
+        )
+        dataList.add(
+            ManageData(
+                "Google Cloud",
+                "0",
+                "https://modoctest.s3.ap-northeast-2.amazonaws.com/1574507149865.jpeg",
+                3000,
+                "매 달 갱신",
+                false,
+                90
+            )
+        )
         manageAdapter.data = dataList
         manageAdapter.notifyDataSetChanged()
 

@@ -53,8 +53,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:textColor="@color/white"
-                        android:text="신한카드 Deep Making" />
+                        android:text="신한카드 Deep Making"
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -72,8 +72,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:textColor="@color/white"
-                        android:text="신한카드 Air Platinum#" />
+                        android:text="신한카드 Air Platinum#"
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
                 <LinearLayout

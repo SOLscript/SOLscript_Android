@@ -56,27 +56,27 @@ fun setRcoudCornerImage(view: ImageView, profile: String) {
         .into(view)
 }
 
-@BindingAdapter("price","pay")
-fun setPayInfo(view: TextView, price: Int, pay : String) {
-    view.text = "월 "+price.toString() + "원 /" + pay
+@BindingAdapter("price", "pay")
+fun setPayInfo(view: TextView, price: Int, pay: String) {
+    view.text = "월 " + price.toString() + "원 /" + pay
 }
 
 @BindingAdapter("plusBoolean", "plusPercent")
-fun setPlusData(view: TextView, plusBoolean : Boolean, plusPercent: Int){
-    if(plusBoolean){
+fun setPlusData(view: TextView, plusBoolean: Boolean, plusPercent: Int) {
+    if (plusBoolean) {
         view.visibility = View.GONE
-    }else{
+    } else {
         view.visibility = View.VISIBLE
         view.text = "+ " + plusPercent.toString() + " %"
     }
 }
 
 @BindingAdapter("minusBoolean", "minusPercent")
-fun setMinusData(view: TextView, minusBoolean : Boolean, minusPercent: Int){
-    if(minusBoolean){
+fun setMinusData(view: TextView, minusBoolean: Boolean, minusPercent: Int) {
+    if (minusBoolean) {
         view.visibility = View.VISIBLE
         view.text = "- " + minusPercent.toString() + " %"
-    }else{
+    } else {
         view.visibility = View.GONE
     }
 }

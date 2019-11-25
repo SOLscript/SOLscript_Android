@@ -42,7 +42,7 @@ public class CustomTemplate {
     };
 
     public static final int[] SHINHAN_COLORS_0 = {
-            Color.rgb(249, 249, 249),Color.rgb(249, 249, 249),Color.rgb(249, 249, 249),Color.rgb(249, 249, 249),
+            Color.rgb(249, 249, 249), Color.rgb(249, 249, 249), Color.rgb(249, 249, 249), Color.rgb(249, 249, 249),
             Color.rgb(249, 249, 249)
     };
 

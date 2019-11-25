@@ -8,9 +8,8 @@
     <ImageView
         android:layout_width="400dp"
         android:layout_height="200dp"
-        android:src="@drawable/home_main_2"
         android:layout_gravity="center_horizontal"
-        />
+        android:src="@drawable/home_main_2" />
 
 
 </FrameLayout>

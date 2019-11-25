@@ -1,7 +1,7 @@
 package com.good.solscript.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.good.solscript.R
 import kotlinx.android.synthetic.main.activity_card.*
 import org.jetbrains.anko.startActivity

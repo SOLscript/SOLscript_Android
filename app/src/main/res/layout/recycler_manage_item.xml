@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="manageData"
             type="com.good.solscript.data.ManageData" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="86dp"
@@ -14,17 +17,17 @@
 
         <RelativeLayout
             android:id="@+id/rl_managefrag_screen"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#e5e8ea" />
+            android:background="#e5e8ea"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/iv_manageitem_img"
+            setRcoudCornerImage="@{manageData.img}"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="25dp"
-            setRcoudCornerImage="@{manageData.img}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,56 +42,56 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/iv_manageitem_img"
             app:layout_constraintTop_toTopOf="parent">
+
             <TextView
                 android:id="@+id/tv_manageitem_appname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#222222"
                 android:lineSpacingExtra="14sp"
                 android:text="@{manageData.appName}"
-                />
+                android:textColor="#222222"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/tv_manageitem_pricemonth"
-                android:layout_marginTop="6dp"
+                pay="@{manageData.pay}"
+                price="@{manageData.price}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                price="@{manageData.price}"
-                pay="@{manageData.pay}"
-                android:textSize="11sp"
-                android:textColor="#222222"
+                android:layout_marginTop="6dp"
                 android:lineSpacingExtra="17sp"
-                />
+                android:textColor="#222222"
+                android:textSize="11sp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_manageitem_increase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:lineSpacingExtra="10sp"
             plusBoolean="@{manageData.isDecrease}"
             plusPercent="@{manageData.percent}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:gravity="end"
+            android:lineSpacingExtra="10sp"
             android:textColor="#3590ea"
             android:textSize="16sp"
-            android:layout_marginRight="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_manageitem_decrease"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             minusBoolean="@{manageData.isDecrease}"
             minusPercent="@{manageData.percent}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
             android:gravity="end"
             android:lineSpacingExtra="10sp"
-            android:layout_marginRight="16dp"
-            android:textStyle="bold"
             android:textColor="#fd479e"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

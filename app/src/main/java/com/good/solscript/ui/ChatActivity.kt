@@ -20,8 +20,8 @@ class ChatActivity : AppCompatActivity() {
     private val repository by lazy { SampleRepository() }
     private val chatAdapter by lazy { ChatAdapter() }
     private val dataList = arrayListOf<ChatData>()
-    private lateinit var message : String
-    private var postChatRequest : PostChatRequest? = null
+    private lateinit var message: String
+    private var postChatRequest: PostChatRequest? = null
     private var imm: InputMethodManager? = null
 
     @SuppressLint("CheckResult")
@@ -56,7 +56,7 @@ class ChatActivity : AppCompatActivity() {
         chatAdapter.addItem(ChatData(message, "me"))
         et_chatact_inputtext.setText("")
 
-        postChatRequest = PostChatRequest(message,"승희")
+        postChatRequest = PostChatRequest(message, "승희")
         repository.postChatDatas(postChatRequest!!)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({

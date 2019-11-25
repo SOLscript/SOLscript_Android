@@ -18,18 +18,19 @@ interface NetworkService {
 
     @GET("/home")
     fun getRecommand(): Single<ResponseRecommand>
+
     @GET("/mypage/search/calender/{month}")
     fun getTotalMoney(
-        @Path("month") month : Int
-    ) : Call<ResponseTotalMoneyData>
+        @Path("month") month: Int
+    ): Call<ResponseTotalMoneyData>
 
     @GET("/mypage/search/cost/{month}")
     fun getCategoryMoney(
-        @Path("month") month : Int
-    ) : Call<ResponseCategoryTotalData>
+        @Path("month") month: Int
+    ): Call<ResponseCategoryTotalData>
 
     @POST("/regist/shinhanCard")
     fun postRegisterCard(
         @Body body: PostCardRequest
-    ) : Call<ResponseRegisterCard>
+    ): Call<ResponseRegisterCard>
 }

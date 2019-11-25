@@ -1,8 +1,8 @@
 package com.good.solscript.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.good.solscript.R
 import com.good.solscript.data.PostCardRequest
 import com.good.solscript.data.ResponseRegisterCard
@@ -32,14 +32,21 @@ class CardInfoActivity : AppCompatActivity() {
             et_cardinfoact_valid.text.toString()
             et_cardinfoact_password.text.toString()
 
-            postRegisterCardData(PostCardRequest(et_cardinfoact_cardnum.text.toString(), et_cardinfoact_cvc2.text.toString(),et_cardinfoact_valid.text.toString(),et_cardinfoact_password.text.toString()))
+            postRegisterCardData(
+                PostCardRequest(
+                    et_cardinfoact_cardnum.text.toString(),
+                    et_cardinfoact_cvc2.text.toString(),
+                    et_cardinfoact_valid.text.toString(),
+                    et_cardinfoact_password.text.toString()
+                )
+            )
             //등록통신
         }
 
 
     }
 
-    private fun postRegisterCardData(cardInfo : PostCardRequest){
+    private fun postRegisterCardData(cardInfo: PostCardRequest) {
         repository.postRegisterCardData(cardInfo).enqueue(
             object : Callback<ResponseRegisterCard> {
                 override fun onFailure(call: Call<ResponseRegisterCard>, t: Throwable) {

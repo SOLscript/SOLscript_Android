@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.good.solscript.R
 import com.good.solscript.data.ManageData
-import com.good.solscript.data.SelectedData
 import com.good.solscript.databinding.RecyclerManageItemBinding
-import com.good.solscript.databinding.RecyclerSelectedItemBinding
 
 class ManageAdapter : RecyclerView.Adapter<ManageAdapter.ManageViewHolder>() {
 

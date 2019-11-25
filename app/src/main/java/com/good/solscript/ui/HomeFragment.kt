@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
             }
             .subscribe({
                 it.map {
-                    Log.d("RecommandData",""+it)
+                    Log.d("RecommandData", "" + it)
                     recommandList.add(it)
                     recommandAdapter.setData(recommandList)
                 }
@@ -69,12 +69,14 @@ class HomeFragment : Fragment() {
         }
 
     }
+
     private fun recyclerViewInit() {
         rv_recomand?.run {
             adapter = recommandAdapter
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         }
     }
+
     fun setClickListener() {
         rl_homefragment_calender.setOnClickListener {
             tv_home_calender.setTextColor(Color.parseColor("#fd479e"))
