@@ -10,7 +10,7 @@ import com.good.solscript.databinding.RecyclerSelectedItemBinding
 class SelectedAdapter : RecyclerView.Adapter<SelectedAdapter.SelectedViewHolder>() {
 
     class SelectedViewHolder(val binding: RecyclerSelectedItemBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        RecyclerView.ViewHolder(binding.clSelecteditemDataset)
 
     var data = listOf<SelectedData>()
 

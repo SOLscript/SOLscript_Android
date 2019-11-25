@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.good.solscript.R
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.image
 
 
 class MainActivity : AppCompatActivity() {

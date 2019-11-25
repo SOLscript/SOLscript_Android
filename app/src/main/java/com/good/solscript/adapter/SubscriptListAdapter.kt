@@ -10,7 +10,7 @@ import com.good.solscript.databinding.RecyclerSubscriptItemBinding
 class SubscriptListAdapter : RecyclerView.Adapter<SubscriptListAdapter.SubscriptViewHolder>() {
 
     class SubscriptViewHolder(val binding: RecyclerSubscriptItemBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        RecyclerView.ViewHolder(binding.clRecycleritemContainer)
 
     var data = listOf<SubscriptData>()
 

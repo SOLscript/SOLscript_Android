@@ -1,6 +1,7 @@
 package com.good.solscript.ui
 
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +9,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.good.solscript.R
+import com.good.solscript.adapter.RecommandAdapter
+import com.good.solscript.data.ResponseRecommandSubData
+import com.good.solscript.data.SampleRepository
+import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.support.v4.startActivity
 
@@ -18,7 +25,9 @@ import org.jetbrains.anko.support.v4.startActivity
 class HomeFragment : Fragment() {
 
     private lateinit var nowFrag: Fragment
-
+    private val recommandAdapter by lazy { RecommandAdapter() }
+    private val repository by lazy { SampleRepository() }
+    private val recommandList = mutableListOf<ResponseRecommandSubData>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,6 +36,7 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    @SuppressLint("CheckResult")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -38,11 +48,36 @@ class HomeFragment : Fragment() {
         callFragment(1)
         setClickListener()
 
-        Log.d(
-            "homeFragmentVisible",
-            "     visible    " + HomeCalenderFragment().isVisible + "  " + HomeSubscriptFragment().isVisible + "   " + HomeUsedFragment().isVisible
-        )
+        tv_home_calender.textSize = 16f
+        callFragment(1)
+        setClickListener()
+        recyclerViewInit()
+        repository.getRecommandDatas()
+            .observeOn(AndroidSchedulers.mainThread())
+            .map {
+                it.responseRecommandData.responseRecommandSubData
+            }
+            .subscribe({
+                it.map {
+                    Log.d("RecommandData", "" + it)
+                    recommandList.add(it)
+                    recommandAdapter.setData(recommandList)
+                }
+            }, {
+                Log.d("commandList_err", "fail " + it.message)
+            })
 
+        iv_homefrag_mypagebtn.setOnClickListener {
+            startActivity<MypageActivity>()
+        }
+
+    }
+
+    private fun recyclerViewInit() {
+        rv_recomand?.run {
+            adapter = recommandAdapter
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        }
     }
 
     fun setClickListener() {
@@ -50,6 +85,9 @@ class HomeFragment : Fragment() {
             tv_home_calender.setTextColor(Color.parseColor("#fd479e"))
             tv_home_mysubscipt.setTextColor(Color.parseColor("#ffffff"))
             tv_home_used.setTextColor(Color.parseColor("#ffffff"))
+            tv_home_calender.textSize = 16f
+            tv_home_mysubscipt.textSize = 14f
+            tv_home_used.textSize = 14f
             callFragment(1)
 
         }
@@ -58,6 +96,9 @@ class HomeFragment : Fragment() {
             tv_home_calender.setTextColor(Color.parseColor("#ffffff"))
             tv_home_mysubscipt.setTextColor(Color.parseColor("#fd479e"))
             tv_home_used.setTextColor(Color.parseColor("#ffffff"))
+            tv_home_calender.textSize = 14f
+            tv_home_mysubscipt.textSize = 16f
+            tv_home_used.textSize = 14f
             callFragment(2)
         }
 
@@ -65,6 +106,9 @@ class HomeFragment : Fragment() {
             tv_home_calender.setTextColor(Color.parseColor("#ffffff"))
             tv_home_mysubscipt.setTextColor(Color.parseColor("#ffffff"))
             tv_home_used.setTextColor(Color.parseColor("#fd479e"))
+            tv_home_calender.textSize = 14f
+            tv_home_mysubscipt.textSize = 14f
+            tv_home_used.textSize = 16f
             callFragment(3)
         }
 
@@ -74,7 +118,7 @@ class HomeFragment : Fragment() {
 
         when (frag) {
             1 -> {
-                nowFrag = HomeCalenderFragment()
+                nowFrag = HomeCardFragment()
             }
 
             2 -> {

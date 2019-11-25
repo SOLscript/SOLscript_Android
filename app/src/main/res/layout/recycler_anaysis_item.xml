@@ -22,7 +22,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="12dp"
+            android:lineSpacingExtra="9sp"
             android:text="@{analysisData.category}"
+            android:textColor="#4f565d"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/appCompatSeekBar"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -33,6 +37,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="12dp"
             android:lineSpacingExtra="9sp"
+            android:progressDrawable="@drawable/custom_seekbar"
             android:text="@{analysisData.money}"
             android:textColor="#4f565d"
             android:textSize="16sp"
@@ -60,9 +65,10 @@
             android:id="@+id/appCompatSeekBar"
             setProgress="@{analysisData.percent}"
             android:layout_width="match_parent"
-            android:layout_height="16dp"
+            android:layout_height="12dp"
             android:layout_marginBottom="32dp"
             android:max="100"
+            android:progressDrawable="@drawable/custom_seekbar"
             android:thumb="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,8 +77,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_height="0.2dp"
             android:background="#c5c4cc"
             app:layout_constraintBottom_toBottomOf="parent" />
 

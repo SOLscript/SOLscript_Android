@@ -30,23 +30,18 @@
                     android:orientation="horizontal">
 
 
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="60dp"
-                        android:layout_marginEnd="200dp"
-                        android:gravity="center_vertical"
-                        android:paddingStart="16dp"
-                        android:text="SOLscription"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="200dp"
+                        android:src="@drawable/home_logo" />
+
+                    <ImageView
+                        android:id="@+id/iv_homefrag_mypagebtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginEnd="12dp"
+                        android:padding="4dp"
                         android:src="@drawable/ic_person" />
 
                     <ImageView
@@ -74,7 +69,7 @@
                         android:id="@+id/tv_home_calender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="캘린더"
+                        android:text="My"
                         android:textColor="@color/white" />
                 </RelativeLayout>
 
@@ -114,19 +109,61 @@
         <FrameLayout
             android:id="@+id/fl_homefragment_container"
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
+            android:layout_height="300dp">
+
+        </FrameLayout>
     </LinearLayout>
 
-    <include layout="@layout/layout_recomand" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="320dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="요즘 20대 남성에게 가장 인기 많은 구독 서비스"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recomand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/artboard_11_copy_3_x_100" />
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_homefrag_chatbtn"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="80dp"
-        android:src="@drawable/ic_chat_white_24dp"
+        android:src="@drawable/icons_8_chatbot_80"
+        app:backgroundTint="@color/gray1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

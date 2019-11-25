@@ -83,11 +83,12 @@
                             android:textSize="21sp" />
 
                         <TextView
+                            android:id="@+id/tv_calendarfrag_totalmoney"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:letterSpacing="-0.04"
                             android:lineSpacingExtra="7sp"
-                            android:text="223,700원"
+                            android:text=" 223,700원"
                             android:textColor="#1377d0"
                             android:textSize="21sp"
                             android:textStyle="bold" />
