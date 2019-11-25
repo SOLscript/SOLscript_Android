@@ -160,7 +160,7 @@
         android:id="@+id/fab_homefrag_chatbtn"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="80dp"
         app:backgroundTint="@color/gray1"
         android:src="@drawable/icons_8_chatbot_80"

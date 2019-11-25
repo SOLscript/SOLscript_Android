@@ -40,6 +40,7 @@ class CategoryContentFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val categoryName = arguments?.getString(CATEGORY_NAME)
+        progress_circular.visibility = View.VISIBLE
         Log.d("categoryName", "" + categoryName)
         categoryRecyclerViewSetup()
 
@@ -55,6 +56,7 @@ class CategoryContentFragment : Fragment() {
 
                 }
                 Log.d("list", "categoryList" + it)
+                progress_circular.visibility = View.INVISIBLE
             }, {
                 Log.d("categoryList_err", "fail" + it.message)
             })

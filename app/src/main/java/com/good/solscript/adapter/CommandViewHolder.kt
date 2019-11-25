@@ -1,5 +1,6 @@
 package com.good.solscript.adapter
 
+import android.content.Context
 import android.net.Uri
 import android.view.View
 import androidx.core.net.toUri
@@ -13,13 +14,10 @@ import org.jetbrains.anko.imageURI
 class CommandViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val tvTitle = itemView.tv_recommand_title
     private val tvSubTitle = itemView.tv_recommand_subtitle
-    private val ivSubnail = itemView.iv_recommand
+     val ivSubnail = itemView.iv_recommand
 
     fun bind(recommandData: ResponseRecommandSubData) {
         tvTitle.text = recommandData.title
         tvSubTitle.text = recommandData.subTitle
-        val uri = Uri.parse(recommandData.image)
-        ivSubnail.setImageURI(uri)
-
     }
 }

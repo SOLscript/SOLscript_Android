@@ -21,8 +21,8 @@ class DetailedActivity : AppCompatActivity() {
                 iv_detailedact_heartselector.isSelected = true
         }
 
-        tv_detailedact_description.setOnClickListener {
-            val url = "http://gun0912.tistory.com"
+        tttt.setOnClickListener {
+            val url = "https://www.millie.co.kr/company/company.html?_emk_keyword=%EB%B0%80%EB%A6%AC%EC%9D%98%EC%84%9C%EC%9E%AC&gclid=CjwKCAiAzuPuBRAIEiwAkkmOSNgvdErUoOhXj6gJNiCtU5e-4FfntuEW1jMMfZD2p4Lg5apBJFSH1xoC6IIQAvD_BwE#introPrice"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
         }

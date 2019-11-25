@@ -60,7 +60,7 @@ class CategoryFragment : Fragment() {
             startActivity<CategoryContentActivity>("tabNumber" to 5)
         }
         ll_category_hobby.onClick {
-            startActivity<CategoryContentActivity>("tabNumber" to 6)
+            startActivity<DetailedActivity>()
         }
         ll_category_homedeco.onClick {
             startActivity<CategoryContentActivity>("tabNumber" to 7)
