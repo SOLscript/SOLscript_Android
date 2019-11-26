@@ -55,9 +55,6 @@ public class UsageListAdapter extends RecyclerView.Adapter<UsageListAdapter.View
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         viewHolder.getPackageName().setText(
                 mCustomUsageStatsList.get(position).usageStats.getPackageName());
-//        long lastTimeUsed = mCustomUsageStatsList.get(position).usageStats.getLastTimeUsed();
-//        viewHolder.getLastTimeUsed().setText(mDateFormat.format(new Date(lastTimeUsed)));
-
         long leastTimeUsed = mCustomUsageStatsList.get(position).usageStats.getTotalTimeInForeground();
 
         long millis = leastTimeUsed % 1000;

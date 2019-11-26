@@ -42,8 +42,6 @@ class AnalysisActivity : AppCompatActivity() {
 
         pc_analysisact_moneychart.dragDecelerationFrictionCoef = 0.5f
 
-//        pc_analysisact_moneychart.isDrawHoleEnabled = true
-
         pc_analysisact_moneychart.setHoleColor(Color.TRANSPARENT)
         pc_analysisact_moneychart.transparentCircleRadius = 44f
         pc_analysisact_moneychart.animateY(1800)
