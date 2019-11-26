@@ -2,11 +2,17 @@
 
 밀레니엄 세대를 중심으로 **구독 경제**가 일상에 깊숙이 자리 잡고 있다. 구독 경제(subscription economy)란 소비자가 정기적으로 비용을 지급하여 원하는 상품을 배송받거나, 일정 기간 서비스를 이용하는 것을 뜻한다.
 
- 현재 구독 경제는 2020년 594조 원 전망을 나타내며 소비의 새로운 패러다임으로 자리 잡았다. 하지만 서비스를 구매하던 기존의 방식이 익숙한 소비자들은 여전히 제한적인 서비스만을 이용하거나, 다양한 결재체계로 흩어져 구독 중인 서비스로 인해 관리에 어려움을 겪고 있다. 따라서 우리 팀은 신한 계열사들의 API들을(목록 아래 기제) 사용하여서 통합적으로 구독 서비스를 관리할 수 있는 플랫폼을 만들고자 한다.
-
+ 현재 구독 경제는 2020년 594조 원 전망을 나타내며 소비의 새로운 패러다임으로 자리 잡았다. 하지만 서비스를 구매하던 기존의 방식이 익숙한 소비자들은 여전히 제한적인 서비스만을 이용하거나, 다양한 결재체계로 흩어져 구독 중인 서비스로 인해 관리에 어려움을 겪고 있다. 따라서 우리 팀은 신한 계열사들의 API들을(목록 아래 기제) 사용하여서 통합적으로 구독 서비스를 관리할 수 있는 플랫폼을 만들고자 한다.\
+\
+\
+\
 # 📽 시연 영상
 https://drive.google.com/drive/folders/1Y-TnhOSvX0GOw-QpAYguQ8f8Mc4y0hNJ
 
+\
+\
+\
+\
  # 📱 어플리케이션 캡쳐화면
 
  | MainActivity | MyPageActivity | CardInfoActivity |
@@ -25,6 +31,10 @@ https://drive.google.com/drive/folders/1Y-TnhOSvX0GOw-QpAYguQ8f8Mc4y0hNJ
 |:---:|:---:|:---:|
 |![image](https://user-images.githubusercontent.com/35513039/69621498-916f3a00-1082-11ea-88ed-a7b14d04d012.png)|![image](https://user-images.githubusercontent.com/35513039/69621573-b6fc4380-1082-11ea-859b-a790b351cfaf.png)|![image](https://user-images.githubusercontent.com/35513039/69621582-bbc0f780-1082-11ea-8ade-62eff06bc5c4.png) |
 
+\
+\
+\
+\
 ## 🂠 구현한 패턴
 **Repository Pattern** \
 데이터를 가져오는 곳을 패턴(일정한 규칙)을 이용하여 구현하는 방법 \
@@ -45,6 +55,9 @@ Repository 객체에서는 서버나 로컬에서 가져온 데이터를 가공�
 
 data 패키지에서는 response객체를 쉽고 빠르게 만들어주는 [Kotlin data class File from JSON](https://plugins.jetbrains.com/plugin/9960-json-to-kotlin-class-jsontokotlinclass-/) PlugIn 을 사용하였다.
 
+\
+\
+\
 ## 📚 주요 라이브러리
 
 📕  
