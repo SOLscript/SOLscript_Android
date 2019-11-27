@@ -6,6 +6,7 @@
 \
 \
 \
+[]()
 # 📽 시연 영상
 https://drive.google.com/drive/folders/1Y-TnhOSvX0GOw-QpAYguQ8f8Mc4y0hNJ
 
@@ -13,6 +14,7 @@ https://drive.google.com/drive/folders/1Y-TnhOSvX0GOw-QpAYguQ8f8Mc4y0hNJ
 \
 \
 \
+[]()
  # 📱 어플리케이션 캡쳐화면
 
  | MainActivity | MyPageActivity | CardInfoActivity |
@@ -35,6 +37,7 @@ https://drive.google.com/drive/folders/1Y-TnhOSvX0GOw-QpAYguQ8f8Mc4y0hNJ
 \
 \
 \
+[]()
 ## 🂠 구현한 패턴
 **Repository Pattern** \
 데이터를 가져오는 곳을 패턴(일정한 규칙)을 이용하여 구현하는 방법 \
@@ -58,6 +61,7 @@ data 패키지에서는 response객체를 쉽고 빠르게 만들어주는 [Kotl
 \
 \
 \
+[]()
 ## 📚 주요 라이브러리
 
 📕  
@@ -123,6 +127,11 @@ implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 \
 [참고자료(github)](https://github.com/googlesamples/android-AppUsageStatistics)
 
+
+\
+\
+\
+[]()
 ## ❗️ 해커톤 준비 팁 ❗️
 
 1. **팀원과 기술 스택을 맞춘다.**
@@ -145,7 +154,7 @@ implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 3. **보일러 플레이트 작업을 한다.**
 
     대회 당일까지 픽스된 뷰는 없는 상태였고 API를 통해 통신을 할 수 없는 상태였기 때문에 클라이언트 입장에서는 준비할 수 없었다. 그러나 아무 작업도 하지 않으면 안된다. 그래서 보일러 플래이트 작업을 하였다. 보일러 플래이트란 소프트웨어 용어로 개발 초기에 재활용할 수 있는 소스를 만들어 두는 것을 말한다. 우리 팀은 객체와 xml를 구현하였다. 자세하게는 사용할 color들을 문자화하고 xml에서 많이 사용하는 background 들을 만들어 두었다. 라이브러리를 미리 조사하여 sync를 하였다. 그리고 repository 패턴에 맞춰서 데이터를 처리하기 위해 filing, foldering 하는 작업을 하였다.\
-    3일 동안 2명이서 9개의 activity, 10개의 fragment, 12개의 Adatper, 22개의 data Class 32개의 xml을 만들었다.
+    3일 동안 2명이서 9개의 activity, 10개의 fragment, 12개의 Adatper, 22개의 data Class, 32개의 xml 총 85개의 파일을 만들었다.
 
 4. **욕심을 부리지 않는다.**
 
