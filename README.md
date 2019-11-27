@@ -77,7 +77,6 @@ implementation 'com.google.android.material:material:1.0.0'
 
 \
 \
-\
 📕  
 ```
 implementation 'com.squareup.retrofit2:retrofit:2.6.2'
@@ -92,7 +91,6 @@ implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
 
 \
 \
-\
 📕  
 ```
 implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
@@ -102,6 +100,11 @@ implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 이 프로젝트에서는 **LineChart**와 **PieChart**를 사용하였다\
 [참고 자료(github)](https://github.com/PhilJay/MPAndroidChart)
 
+\
+\
+\
+\
+[]()
 ## 💡 핵심 기술
 ### 🔍 **RxJava**
 자바로 리액티브 프로그래밍을 할 수 있는 라이브러리며 비동기 프로그래밍과 함수형 프로그래밍 기법을 함께 활용한다.
